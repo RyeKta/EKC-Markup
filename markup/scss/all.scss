@@ -350,6 +350,9 @@ a{
 		font-size: 42px;
 		margin: 0 0 20px;
 		color: $black;
+		@media only screen and (max-width: $screen-xs-max){
+			font-size: 32px;
+		}
 	}
 }
 .intro-section{
@@ -615,6 +618,330 @@ a{
 
    	}
    }
+/* ==========================================================================
+   About us page Styles
+   ========================================================================== */
+.page-intro{
+	background-attachment: fixed;
+	position: relative;
+	padding: 59px 0;
+	color: $white;
+	&:before{
+		background-color: transparentize($black, 0.6);
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+	.section-heading{
+		h1{
+			text-transform: uppercase;
+			font-size: 42px;
+			font-weight: 600;
+			color: $yellow;
+			@media only screen and (max-width: $screen-xs-max){
+				font-size: 32px;
+			}
+		}
+		p{
+			font-weight: 300;
+		}
+	}
+}
+/* Awards
+   ========================================================================== */
+.achievement-block{
+	padding: 39px 0 0;
+}
+.award-holder{
+	@media only screen and (max-width: 479px){
+		.col-xs-6{
+			float: none;
+			width: 100%;
+		}
+	}
+}
+.award-top{
+	margin-bottom: 27px;
+	h2{
+		border-top: 1px solid $gray-light;
+		border-bottom: 1px solid $gray-light;
+		font-size: 26px;
+		font-weight: 700;
+		text-transform: uppercase;
+		color: $white;
+		padding: 12px 0;
+		margin: 0;
+	}
+}
+.award-head{
+	width: 355px;
+	height: 355px;
+	margin: 0 auto 18px;
+	img{
+		display: block;
+		height: auto;
+		width: 100%;
+	}
+	@media only screen and (max-width: $screen-xs-max){
+		width: 238px;
+		height: 238px;
+	}
+}
+.award{
+	margin-bottom: 26px;
+	.img-holder{
+		width: 131px;
+		height: 131px;
+		border-radius: 50%;
+		margin: 0 auto;
+		overflow: hidden;
+		margin-bottom: 26px;
+		img{
+			width: 100%;
+			height: auto;
+			display: block;
+		}
+	}
+	h3,
+	.award-title{
+		font-size: 18px;
+		color: $gray;
+		font-weight: 600;
+		margin-bottom: 17px;
+	}
+}
+/* Info Section
+   ========================================================================== */
+   .info-part{
+   	padding: 27px 0;
+   	h2{
+   		margin-bottom: 32px;
+   		color: $white;
+   		@media only screen and (max-width: $screen-sm-max){
+   			text-align: center;
+   		}
+   	}
+   	.text-block{
+   		p{
+   			font-weight: 300;
+   		}
+   		.btn-holder{
+   			padding-top: 27px;
+   		}
+   		.more-link{
+   			color: $white;
+   			border-bottom: 2px solid $yellow;
+   			&:hover{
+   				color: $yellow;
+   			}
+   		}
+   	}
+   }
+   /*
+    * This is a common styles for different list within the about us page
+    * Services, Values, etc..
+    */
+    .has-list{
+    	.icon-holder{
+    		width: 48px;
+    		height: 48px;
+    		border: 2px solid $yellow;
+    		text-align: center;
+    		.fa{
+    			line-height: 44px;
+    			font-size: 27px;
+    			color: $yellow;
+    		}
+    	}
+    	.text-holder{
+    		overflow: hidden;
+    		padding-left: 18px;
+    	}
+    	h3{
+    		color: $yellow;
+    		font-size: 27px;
+    		line-height: 48px;
+    		font-weight: 600;
+    		margin-bottom: 12px;
+    		@media only screen and (max-width: $screen-xs-max){
+    			font-size: 22px;
+    		}
+    	}
+    }
+   /* Declaration block 
+      ========================================================================== */
+  .values-block{
+  	@extend .info-part;
+   	.section-heading{
+   		p{
+   			font-weight: 300;
+   		}
+   	}
+  }
+  .values-item{
+  	margin: 0 0 22px;
+  }
+  /* Services section
+     ========================================================================== */
+  .service-block{
+	padding: 39px 0;
+	h2{
+		color: $black;
+	}
+  }
+  .service-item{
+  	margin-bottom: 48px;
+  	.icon-holder{
+  		border-color: $blue2;
+  		.fa{
+  			color: $blue2;
+  		}
+  	}
+  	h3{
+  		color: $black;
+  		a{
+  			&:hover{
+  				color: $blue2;
+  			}
+  		}
+  	}
+  	.btn-holder{
+  		padding-left: 64px;
+  		padding-top: 26px;
+  	}
+  	.more-link{
+  		color: $black;
+  		border-bottom: 2px solid $blue2;
+  		&:hover{
+  			color: $blue2;
+  		}
+  	}
+  }
+  /* Team members block
+     ========================================================================== */
+     .team-block{
+     	padding: 39px 0;
+     	.cycle-gallery{
+     		.slide-text{
+     			position: static;
+     		}
+     	}
+     }
+     .cycle-gallery{
+     	.caption{
+     		padding: 27px 0;
+     		@media only screen and (max-width: 479px){
+     			display: none;
+     		}
+     		.member-name{
+     			text-transform: capitalize;
+     			font-weight: 600;
+     			font-size: 27px;
+     			line-height: 33px;
+     			a:hover{
+     				color: $blue2;
+     			}
+     		}
+     		.social-holder{
+     			padding-top: 18px;
+     		}
+     		.social-link{
+     			li{
+     				display: inline-block;
+     				vertical-align: top;
+     				.link{
+     					-webkit-transition: all 0.3s ease-in-out;
+     					transition: all 0.3s ease-in-out;
+     					text-align: center;
+     					display: inline-block;
+     					vertical-align: top;
+     					border-radius: 50%;
+     					overflow: hidden;
+     					width: 40px;
+     					height: 40px;
+     					background: $yellow;
+     					&:hover{
+     						background-color: $blue2;
+     					}
+     				}
+     				&+li{
+     					margin-left: 18px;
+     				}
+     			}
+     			.icon{
+     				line-height: 40px;
+     				font-size: 22px;
+     			}
+     		}
+     	}
+     }
+     .about-testimonial{
+     	padding: 59px 0 0;
+     	.section-heading{
+     		p{
+     			color: $black;
+     		}
+     	}
+     	.container{
+     		margin-top: 100px;
+     	}
+     }
+     /* Contact links
+        ========================================================================== */
+     .contacts-links{
+     	position: relative;
+     	@media only screen and (max-width: $screen-sm-max){
+     		padding-top: 55vw;
+     	}
+     	& [class^="col-"]{
+     		position: static;
+     	}
+     	.btn-holder{
+     		padding-top: 40px;
+     	}
+     }
+     .section-content{
+     	@media only screen and (min-width: $screen-md-min){
+     		padding-left: 59px;
+     	}
+    }
+    .section-lg{
+    	padding: 27px 0;
+    	@media only screen and (min-width: $screen-md-min){
+    		padding: 59px 0;
+    	}
+    }
+    .section-image{
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    	right: 0;
+    	overflow: hidden;
+    	height: 55vw;
+    	img{
+    		width: 100%;
+    		height: auto;
+    	}
+    	@media only screen and (min-width: $screen-md-min){
+    		width: 46vw;
+    		bottom: 0;
+    		height: auto;
+    		img{
+    			position: absolute;
+    			top: 50%;
+    			left: 50%;
+    			-webkit-transform: translate(-50%, -50%);
+    			transform: translate(-50%, -50%);
+    			width: auto;
+    			height: auto;
+    			min-width: 100%;
+    			min-height: 100%;
+    		}
+    	}
+    }
 /* ==========================================================================
    Featured story
    ========================================================================== */
@@ -1848,8 +2175,8 @@ header{
 .black-section{
 	color: $white;
 	background: $gray12;
-	padding: 10px 0 7px;
-	h1{
+	h1,
+	h2{
 		color: $white;
 		text-transform: uppercase;
 		font-weight: 700;

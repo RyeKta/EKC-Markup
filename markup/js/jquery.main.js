@@ -10,6 +10,12 @@ jQuery(function(){
 		parallaxOffset: -50,
 		fallbackClass: 'fallback-class'
 	});
+	jQuery(".page-intro").parallaxBlock({
+		parallaxOffset: -50,
+		fallbackClass: 'fallback-class'
+	});
+	carouselMarginTop();
+	
 });
 
 jQuery(window).on('load', function(){
@@ -38,6 +44,15 @@ $(window).scroll(function(){
 		stickyNav.removeClass("scrolling");
 	}
 });
+//margin top for testimonial in about us
+function carouselMarginTop(){
+	var testimonialTopHeight = $('.about-testimonial .section-heading').height(),
+	carouselHolder = $('.about-testimonial > .container');
+	carouselHolder.css('margin-top', testimonialTopHeight);
+}
+$(window).resize(function(){
+	carouselMarginTop();
+})
 function initInputNumber(){
 	var holder = jQuery('.number-input'),
 		handle,
@@ -104,6 +119,7 @@ function initCustomForms() {
 // cycle scroll gallery init
 function initCycleCarousel() {
 	var owl = jQuery('.owl-carousel'),
+		team = jQuery('.team-carousel'),
 		wrap = jQuery('.cycle-gallery');
 
 	wrap.on('click', '.btn-next', function(e) {
@@ -145,7 +161,49 @@ function initCycleCarousel() {
 			}
 		}
 	});
+	//Team slider
+	wrap.on('click', '.btn-next', function(e) {
+		e.preventDefault();
+		team.trigger('next.owl.carousel');
+	});
+	wrap.on('click', '.btn-prev', function(e) {
+		e.preventDefault();
+		team.trigger('prev.owl.carousel');
+	});
+	team.owlCarousel({
+		center: false,
+		loop: true,
+		items:1,
+		margin: 0,
+		stagePadding: 100,
+		autoplay:true,
+		responsiveClass: true,
+		autoplayTimeout:3000,
+		autoplayHoverPause:true,
+		mouseDrag: false,
+		responsive:{
+			0:{
+				items:1
+			},
+			768:{
+				items: 2
+			},
+			992:{
+				items:3
+			},
+			1200:{
+				items:4
+			},
+			1400:{
+				items:5
+			},
+			1700:{
+				items:6
+			}
+		}
+	});
 }
+
 
 // content tabs init
 function initTabs() {
@@ -183,6 +241,16 @@ function initSameHeight() {
 	jQuery('.height-box').sameHeight({
 		elements: '.some-height',
 		flexible: true
+	});
+	jQuery('.values-list').sameHeight({
+		elements: '.values-item',
+		flexible: true,
+		multiLine: true
+	});
+	jQuery('.services-list').sameHeight({
+		elements: '.text-holder',
+		flexible: true,
+		multiLine: true
 	});
 	jQuery('#footer').sameHeight({
 		elements: '.same-height',

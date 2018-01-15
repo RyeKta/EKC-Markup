@@ -1,5 +1,6 @@
 /* Show active breakpoint in top right corner of viewport*/
 /* $mq-show-breakpoints: (mobile, mobileLandscape, tablet, desktop, widescreen, tvscreen);*/
+/* custom variables and override bootstrap variables*/
 .sample-block .status:after, header:after, .cycle-gallery .mask:after, .work-container dl:after {
   content: " ";
   display: block;
@@ -278,6 +279,9 @@ a {
     font-size: 42px;
     margin: 0 0 20px;
     color: #000; }
+    @media only screen and (max-width: 767px) {
+      .section-heading h2 {
+        font-size: 32px; } }
 
 .intro-section {
   padding: 59px 0 0; }
@@ -505,6 +509,270 @@ a {
     font-weight: 700;
     line-height: 32px;
     font-size: 25px; }
+
+/* ==========================================================================
+   About us page Styles
+   ========================================================================== */
+.page-intro {
+  background-attachment: fixed;
+  position: relative;
+  padding: 59px 0;
+  color: #fff; }
+  .page-intro:before {
+    background-color: rgba(0, 0, 0, 0.4);
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .page-intro .section-heading h1 {
+    text-transform: uppercase;
+    font-size: 42px;
+    font-weight: 600;
+    color: #f1dd31; }
+    @media only screen and (max-width: 767px) {
+      .page-intro .section-heading h1 {
+        font-size: 32px; } }
+  .page-intro .section-heading p {
+    font-weight: 300; }
+
+/* Awards
+   ========================================================================== */
+.achievement-block {
+  padding: 39px 0 0; }
+
+@media only screen and (max-width: 479px) {
+  .award-holder .col-xs-6 {
+    float: none;
+    width: 100%; } }
+
+.award-top {
+  margin-bottom: 27px; }
+  .award-top h2 {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    font-size: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 12px 0;
+    margin: 0; }
+
+.award-head {
+  width: 355px;
+  height: 355px;
+  margin: 0 auto 18px; }
+  .award-head img {
+    display: block;
+    height: auto;
+    width: 100%; }
+  @media only screen and (max-width: 767px) {
+    .award-head {
+      width: 238px;
+      height: 238px; } }
+
+.award {
+  margin-bottom: 26px; }
+  .award .img-holder {
+    width: 131px;
+    height: 131px;
+    border-radius: 50%;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-bottom: 26px; }
+    .award .img-holder img {
+      width: 100%;
+      height: auto;
+      display: block; }
+  .award h3,
+  .award .award-title {
+    font-size: 18px;
+    color: #f5f5f5;
+    font-weight: 600;
+    margin-bottom: 17px; }
+
+/* Info Section
+   ========================================================================== */
+.info-part, .values-block {
+  padding: 27px 0; }
+  .info-part h2, .values-block h2 {
+    margin-bottom: 32px;
+    color: #fff; }
+    @media only screen and (max-width: 991px) {
+      .info-part h2, .values-block h2 {
+        text-align: center; } }
+  .info-part .text-block p, .values-block .text-block p {
+    font-weight: 300; }
+  .info-part .text-block .btn-holder, .values-block .text-block .btn-holder {
+    padding-top: 27px; }
+  .info-part .text-block .more-link, .values-block .text-block .more-link {
+    color: #fff;
+    border-bottom: 2px solid #f1dd31; }
+    .info-part .text-block .more-link:hover, .values-block .text-block .more-link:hover {
+      color: #f1dd31; }
+
+/*
+    * This is a common styles for different list within the about us page
+    * Services, Values, etc..
+    */
+.has-list .icon-holder {
+  width: 48px;
+  height: 48px;
+  border: 2px solid #f1dd31;
+  text-align: center; }
+  .has-list .icon-holder .fa {
+    line-height: 44px;
+    font-size: 27px;
+    color: #f1dd31; }
+
+.has-list .text-holder {
+  overflow: hidden;
+  padding-left: 18px; }
+
+.has-list h3 {
+  color: #f1dd31;
+  font-size: 27px;
+  line-height: 48px;
+  font-weight: 600;
+  margin-bottom: 12px; }
+  @media only screen and (max-width: 767px) {
+    .has-list h3 {
+      font-size: 22px; } }
+
+/* Declaration block 
+      ========================================================================== */
+.values-block .section-heading p {
+  font-weight: 300; }
+
+.values-item {
+  margin: 0 0 22px; }
+
+/* Services section
+     ========================================================================== */
+.service-block {
+  padding: 39px 0; }
+  .service-block h2 {
+    color: #000; }
+
+.service-item {
+  margin-bottom: 48px; }
+  .service-item .icon-holder {
+    border-color: #298fb6; }
+    .service-item .icon-holder .fa {
+      color: #298fb6; }
+  .service-item h3 {
+    color: #000; }
+    .service-item h3 a:hover {
+      color: #298fb6; }
+  .service-item .btn-holder {
+    padding-left: 64px;
+    padding-top: 26px; }
+  .service-item .more-link {
+    color: #000;
+    border-bottom: 2px solid #298fb6; }
+    .service-item .more-link:hover {
+      color: #298fb6; }
+
+/* Team members block
+     ========================================================================== */
+.team-block {
+  padding: 39px 0; }
+  .team-block .cycle-gallery .slide-text {
+    position: static; }
+
+.cycle-gallery .caption {
+  padding: 27px 0; }
+  @media only screen and (max-width: 479px) {
+    .cycle-gallery .caption {
+      display: none; } }
+  .cycle-gallery .caption .member-name {
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 27px;
+    line-height: 33px; }
+    .cycle-gallery .caption .member-name a:hover {
+      color: #298fb6; }
+  .cycle-gallery .caption .social-holder {
+    padding-top: 18px; }
+  .cycle-gallery .caption .social-link li {
+    display: inline-block;
+    vertical-align: top; }
+    .cycle-gallery .caption .social-link li .link {
+      -webkit-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      text-align: center;
+      display: inline-block;
+      vertical-align: top;
+      border-radius: 50%;
+      overflow: hidden;
+      width: 40px;
+      height: 40px;
+      background: #f1dd31; }
+      .cycle-gallery .caption .social-link li .link:hover {
+        background-color: #298fb6; }
+    .cycle-gallery .caption .social-link li + li {
+      margin-left: 18px; }
+  .cycle-gallery .caption .social-link .icon {
+    line-height: 40px;
+    font-size: 22px; }
+
+.about-testimonial {
+  padding: 59px 0 0; }
+  .about-testimonial .section-heading p {
+    color: #000; }
+  .about-testimonial .container {
+    margin-top: 100px; }
+
+/* Contact links
+        ========================================================================== */
+.contacts-links {
+  position: relative; }
+  @media only screen and (max-width: 991px) {
+    .contacts-links {
+      padding-top: 55vw; } }
+  .contacts-links [class^="col-"] {
+    position: static; }
+  .contacts-links .btn-holder {
+    padding-top: 40px; }
+
+@media only screen and (min-width: 992px) {
+  .section-content {
+    padding-left: 59px; } }
+
+.section-lg {
+  padding: 27px 0; }
+  @media only screen and (min-width: 992px) {
+    .section-lg {
+      padding: 59px 0; } }
+
+.section-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  height: 55vw; }
+  .section-image img {
+    width: 100%;
+    height: auto; }
+  @media only screen and (min-width: 992px) {
+    .section-image {
+      width: 46vw;
+      bottom: 0;
+      height: auto; }
+      .section-image img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: auto;
+        height: auto;
+        min-width: 100%;
+        min-height: 100%; } }
 
 /* ==========================================================================
    Featured story
@@ -1493,9 +1761,9 @@ header h6 {
 
 .black-section {
   color: #fff;
-  background: #1f1f1f;
-  padding: 10px 0 7px; }
-  .black-section h1 {
+  background: #1f1f1f; }
+  .black-section h1,
+  .black-section h2 {
     color: #fff;
     text-transform: uppercase;
     font-weight: 700;
