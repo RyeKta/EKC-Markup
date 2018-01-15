@@ -942,6 +942,116 @@ a{
     		}
     	}
     }
+/*
+ * Stylesheet for Contact Page 
+ */
+ .info-holder{
+ 	padding: 59px 0;
+ }
+ .contact-info{
+ 	@media only screen and (min-width: $screen-md-min){
+ 		padding-top: 131px;
+ 	}
+ 	.list{
+ 		@media only screen and (max-width: $screen-sm-max){
+ 			&:before,
+ 			&:after{
+ 				content: "";
+ 				display: table;
+ 			}
+ 			&:after{
+ 				clear: both;
+ 			}
+ 		}
+ 		li{
+ 			overflow: hidden;
+ 			&+li{
+ 				@media only screen and (min-width: $screen-md-min){
+ 					margin-top: 39px;
+ 				}
+ 				@media only screen and (max-width: $screen-xs-max){
+ 					margin-top: 39px;
+ 				}
+ 			}
+ 			@media only screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max){
+ 				float: left;
+ 				width: 33.33%;
+ 			}
+ 		}
+ 	}
+ 	h3{
+ 		color: $gray-darker;
+ 		margin-bottom: 4px;
+ 		@media only screen and (max-width: $screen-sm-max){
+ 			font-size: 14px;
+ 			margin-bottom: 0;
+ 		}
+ 	}
+ 	.info-icon{
+ 		min-width: 39px;
+ 		float: left;
+ 		font-size: 39px;
+ 		margin-right: 18px;
+ 		color: $blue2;
+ 		@media only screen and (max-width: $screen-sm-max){
+ 			margin-right: 12px;
+ 			min-width: 22px;
+ 			font-size: 27px;
+ 		}
+ 	}
+ 	.info-text{
+ 		overflow: hidden;
+ 		span,
+ 		.link{
+ 			@media only screen and (max-width: $screen-sm-max){
+ 				font-size: 14px;
+ 			}
+ 		}
+ 		span{
+ 			color: $black;
+ 		}
+ 		.link{
+ 			color: $blue2;
+ 			&:hover{
+ 				color: $blue3;
+ 			}
+ 		}
+ 	}
+ }
+ .contact-form{
+ 	@media only screen and (max-width: $screen-sm-max){
+ 		padding-bottom: 39px;
+ 	}
+ 	.required-row{
+ 		&.error{
+ 			input,
+ 			textarea{
+ 				border-color: $red;
+ 			}
+ 		}
+ 	}
+ 	.form-group,
+ 	.form-row{
+ 		@media only screen and (min-width: $screen-sm-min){
+ 			margin-bottom: 39px;
+ 		}
+ 	}
+ 	input,
+ 	textarea{
+ 		border: 3px solid $gray-light;
+ 		padding: 18px;
+ 	}
+ 	input{
+ 		height: 59px;
+ 	}
+ 	textarea{
+ 		height: 160px;
+ 		resize: none;
+ 	}
+ 	.btn{
+ 		text-transform: capitalize;
+ 	}
+ }
 /* ==========================================================================
    Featured story
    ========================================================================== */

@@ -774,6 +774,97 @@ a {
         min-width: 100%;
         min-height: 100%; } }
 
+/*
+ * Stylesheet for Contact Page 
+ */
+.info-holder {
+  padding: 59px 0; }
+
+@media only screen and (min-width: 992px) {
+  .contact-info {
+    padding-top: 131px; } }
+
+@media only screen and (max-width: 991px) {
+  .contact-info .list:before, .contact-info .list:after {
+    content: "";
+    display: table; }
+  .contact-info .list:after {
+    clear: both; } }
+
+.contact-info .list li {
+  overflow: hidden; }
+  @media only screen and (min-width: 992px) {
+    .contact-info .list li + li {
+      margin-top: 39px; } }
+  @media only screen and (max-width: 767px) {
+    .contact-info .list li + li {
+      margin-top: 39px; } }
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .contact-info .list li {
+      float: left;
+      width: 33.33%; } }
+
+.contact-info h3 {
+  color: #848484;
+  margin-bottom: 4px; }
+  @media only screen and (max-width: 991px) {
+    .contact-info h3 {
+      font-size: 14px;
+      margin-bottom: 0; } }
+
+.contact-info .info-icon {
+  min-width: 39px;
+  float: left;
+  font-size: 39px;
+  margin-right: 18px;
+  color: #298fb6; }
+  @media only screen and (max-width: 991px) {
+    .contact-info .info-icon {
+      margin-right: 12px;
+      min-width: 22px;
+      font-size: 27px; } }
+
+.contact-info .info-text {
+  overflow: hidden; }
+  @media only screen and (max-width: 991px) {
+    .contact-info .info-text span,
+    .contact-info .info-text .link {
+      font-size: 14px; } }
+  .contact-info .info-text span {
+    color: #000; }
+  .contact-info .info-text .link {
+    color: #298fb6; }
+    .contact-info .info-text .link:hover {
+      color: #0f57b7; }
+
+@media only screen and (max-width: 991px) {
+  .contact-form {
+    padding-bottom: 39px; } }
+
+.contact-form .required-row.error input,
+.contact-form .required-row.error textarea {
+  border-color: #ec242e; }
+
+@media only screen and (min-width: 768px) {
+  .contact-form .form-group,
+  .contact-form .form-row {
+    margin-bottom: 39px; } }
+
+.contact-form input,
+.contact-form textarea {
+  border: 3px solid #eee;
+  padding: 18px; }
+
+.contact-form input {
+  height: 59px; }
+
+.contact-form textarea {
+  height: 160px;
+  resize: none; }
+
+.contact-form .btn {
+  text-transform: capitalize; }
+
 /* ==========================================================================
    Featured story
    ========================================================================== */
