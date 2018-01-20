@@ -996,75 +996,75 @@ a{
   */
   .blog-card-section{
   	padding: 26px 0 59px;
-  	.post-card{
-  		border: 1px solid $gray3;
-  		background-color: $white;
-  		margin-bottom: 27px;
-  		.post-thumb-img{
-  			overflow: hidden;
-  			a{
-  				display: block;
-  			}
-  			img{
-  				-webkit-transition: all 0.33s ease-in-out;
-  						transition: all 0.33s ease-in-out;
-  				-webkit-transform: scale(1);
-  				        transform: scale(1);
-  				&:hover{
-  					-webkit-transform: scale(1.05);
-  					        transform: scale(1.05);
-  				}
-  			}
-  		}
-  		.post-card-content{
-  			padding: 18px;
-  		}
-  		.post-title{
-  			font-size: 18px;
-  			font-weight: 600;
-  			display: block;
-  			color: $black;
-  			margin-bottom: 12px;
-  		}
-  		.post-card-text{
-  			p{
-  				font-size: 14px;
-  				line-height: 22px;
-  				margin: 0;
-  			}
-  		}
-  		.post-footer{
-  			padding: 0 18px 18px;
-  			color: $black;
-  			font-size: 14px;
-  			line-height: 22px;
-  		}
-  		.post-meta{
-  			padding-bottom: 14px;
-  			border-bottom: 1px solid $gray-light;
-  			.fa{
-  				color: $blue2;
-  				font-size: 22px;
-  				vertical-align: middle;
-  				margin-right: 8px;
-  			}
-  		}
-  		.post-tags{
-  			a{
-  				display: inline-block;
-  				margin-right: 12px;
-  				vertical-align: top;
-  				color: $blue2;
-  				font-weight: 600;
-  				&:hover{
-  					color: $blue3;
-  				}
-  			}
-  		}
-  	}
   	.pagination-block{
   		border-top: 1px solid $gray-light;
   		padding-top: 27px;
+  	}
+  }
+  .post-card{
+  	border: 1px solid $gray3;
+  	background-color: $white;
+  	margin-bottom: 27px;
+  	.post-thumb-img{
+  		overflow: hidden;
+  		a{
+  			display: block;
+  		}
+  		img{
+  			-webkit-transition: all 0.33s ease-in-out;
+  			transition: all 0.33s ease-in-out;
+  			-webkit-transform: scale(1);
+  			transform: scale(1);
+  			&:hover{
+  				-webkit-transform: scale(1.05);
+  				transform: scale(1.05);
+  			}
+  		}
+  	}
+  	.post-card-content{
+  		padding: 18px;
+  	}
+  	.post-title{
+  		font-size: 18px;
+  		font-weight: 600;
+  		display: block;
+  		color: $black;
+  		margin-bottom: 12px;
+  	}
+  	.post-card-text{
+  		p{
+  			font-size: 14px;
+  			line-height: 22px;
+  			margin: 0;
+  		}
+  	}
+  	.post-footer{
+  		padding: 0 18px 18px;
+  		color: $black;
+  		font-size: 14px;
+  		line-height: 22px;
+  	}
+  	.post-meta{
+  		padding-bottom: 14px;
+  		border-bottom: 1px solid $gray-light;
+  		.fa{
+  			color: $blue2;
+  			font-size: 22px;
+  			vertical-align: middle;
+  			margin-right: 8px;
+  		}
+  	}
+  	.post-tags{
+  		a{
+  			display: inline-block;
+  			margin-right: 12px;
+  			vertical-align: top;
+  			color: $blue2;
+  			font-weight: 600;
+  			&:hover{
+  				color: $blue3;
+  			}
+  		}
   	}
   }
 /*
@@ -1193,6 +1193,23 @@ a{
  		}
  	}
  }
+ /* Related block section below the single article */
+ .related-block{
+ 	border-top: 1px solid $gray3;
+ 	padding-top: 26px;
+ 	h2{
+ 		font-size: 22px;
+ 		font-weight: 500;
+ 		color: $black;
+ 		margin: 0 0 27px;
+ 	}
+ 	@media only screen and (max-width: 479px){
+ 		.col-xs-6{
+ 			width: 100%;
+ 			float: none;
+ 		}
+ 	}
+ }
  /* Single article sidebar */
  #sidebar{
  	h2{
@@ -1202,13 +1219,54 @@ a{
  		text-transform: uppercase;
  		border-bottom: 1px solid $gray3;
  		padding-bottom: 5px;
- 		margin: 0;
+ 		margin: 0 0 15px;
  	}
- 	.list{
- 		li{
- 			margin-bottom: 15px;
+ }
+ .sidebar-panel{
+ 	background-color: $white;
+ 	padding: 15px;
+ 	margin-bottom: 27px;
+ }
+ .list{
+ 	li{
+ 		font-weight: 600;
+ 		font-size: 15px;
+ 		margin-bottom: 15px;
+ 		a{
+ 			display: block;
+ 			color: $black;
+ 			&:hover{
+ 				color: $blue3;
+ 			}
  		}
  	}
+ }
+ .list-topics{
+	li{
+		position: relative;
+		padding-left: 27px;
+		&:before{
+			position: absolute;
+			content: "\f138";
+			color: $yellow;
+			left: 0;
+			font-family: FontAwesome;
+			text-rendering: auto;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
+		a{
+			color: $blue2;
+			padding-bottom: 14px;
+			border-bottom: 1px solid $gray-light;
+		}
+		&:last-child{
+			a{
+				border-bottom: none;
+				padding-bottom: 0;
+			}
+		}
+	}
  }
 /*
  * *************************************************************

@@ -308,6 +308,11 @@ function initSameHeight() {
 		flexible: true,
 		multiLine: true
 	});
+	jQuery('.related-block').sameHeight({
+		elements: '.post-card',
+		flexible: true,
+		multiLine: true
+	});
 	jQuery('#footer').sameHeight({
 		elements: '.same-height',
 		flexible: true,
