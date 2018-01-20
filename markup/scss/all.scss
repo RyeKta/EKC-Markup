@@ -121,75 +121,10 @@ body{
 		
 	}
 }
-
-.content,
-#content{
-	margin:0 176px 0 216px;
-	padding: 16px 0;
-	@media only screen and (max-width: $screen-sm-max) {
-		margin-right: 0;
-	}
+img{
+	width: 100%;
+	height: auto;
 }
-
-#content{
-	h2{
-		margin: 0 0 14px;
-		padding: 0 23px;
-		letter-spacing: -1px;
-	}
-	.viewed-box{
-		h2{
-			margin:-2px 0 8px;
-			padding: 0;
-		}
-	}
-	@media only screen and (max-width: $screen-sm-max) {
-		margin-right: 0;
-	}
-	@media only screen and (max-width: $screen-xs-max) {
-		margin-left: 0;
-	}
-}
-
-.content{
-	margin:0 182px 0 0;
-	padding: 0;
-	@media only screen and (max-width: $screen-sm-max) {
-		margin: 0;
-	}
-}
-
-#sidebar{
-	width: 200px;
-	padding: 16px 0;
-	float: left;
-	margin:0 0 0 -100%;
-	display: inline;
-	overflow: hidden;
-	@media only screen and (max-width: $screen-xs-max) {
-		width: 220px;
-	}
-}
-
-#aside{
-	width:163px;
-	float:right;
-	margin:0 0 0 -163px;
-	#sidebar+&{
-		padding-top: 52.45px;
-	}
-	h2{
-		margin: 0;
-		padding: 8px 0 4px;
-		letter-spacing: -1px;
-	}
-	@media only screen and (max-width: $screen-sm-max) {
-		float: none;
-		width: auto;
-		margin: 0;
-	}
-}
-
 h3{
 	margin: 0;
 	color: $blue3;
@@ -548,7 +483,7 @@ a{
 		.entry-title{
 			padding-left: 12px;
 			font-weight: 600;
-			color: $blue4;
+			color: $black;
 		}
 	}
    }
@@ -621,11 +556,14 @@ a{
 /* ==========================================================================
    About us page Styles
    ========================================================================== */
-.page-intro{
+.hero-banner{
 	background-attachment: fixed;
 	position: relative;
-	padding: 59px 0;
+	padding: 107px 0;
 	color: $white;
+	@media only screen and (max-width: $screen-sm-max){
+		padding: 59px 0;
+	}
 	&:before{
 		background-color: transparentize($black, 0.6);
 		content: "";
@@ -1052,47 +990,229 @@ a{
  		text-transform: capitalize;
  	}
  }
-/* ==========================================================================
-   Featured story
-   ========================================================================== */
-   .featured-story{
-   	padding: 32px 0 48px;
-   	h2{
-   		font-size: 42px;
-   		margin: 0 0 7px;
-   		@media only screen and (max-width: $screen-xs-max){
-   			font-size: 32px;
-   			margin-bottom: 22px;
-   		}
-   	}
-   }
-  .featured-item{
-  	padding: 11px 0;
-  	@media only screen and (max-width: 639px){
-  		padding-bottom: 22px;
-  	}
-  	.featured-img{
-  		margin: 0 0 11px;
-  		img{
-  			width: 100%;
+ /*
+  * Stylesheet for News home page
+  * Same can be used for blog page if needed
+  */
+  .blog-card-section{
+  	padding: 26px 0 59px;
+  	.post-card{
+  		border: 1px solid $gray3;
+  		background-color: $white;
+  		margin-bottom: 27px;
+  		.post-thumb-img{
+  			overflow: hidden;
+  			a{
+  				display: block;
+  			}
+  			img{
+  				-webkit-transition: all 0.33s ease-in-out;
+  						transition: all 0.33s ease-in-out;
+  				-webkit-transform: scale(1);
+  				        transform: scale(1);
+  				&:hover{
+  					-webkit-transform: scale(1.05);
+  					        transform: scale(1.05);
+  				}
+  			}
   		}
-  	}
-  	.featured-title{
-  		@media only screen and (max-width: 639px){
-  			height: auto !important;
+  		.post-card-content{
+  			padding: 18px;
   		}
-  	}
-  	h3{
-  		font-size: 26px;
-  		a{
-  			-webkit-transition: all 0.3s ease-in-out;
-  			transition: all 0.3s ease-in-out;
-  			&:hover{
-  				color: $red;
+  		.post-title{
+  			font-size: 18px;
+  			font-weight: 600;
+  			display: block;
+  			color: $black;
+  			margin-bottom: 12px;
+  		}
+  		.post-card-text{
+  			p{
+  				font-size: 14px;
+  				line-height: 22px;
+  				margin: 0;
+  			}
+  		}
+  		.post-footer{
+  			padding: 0 18px 18px;
+  			color: $black;
+  			font-size: 14px;
+  			line-height: 22px;
+  		}
+  		.post-meta{
+  			padding-bottom: 14px;
+  			border-bottom: 1px solid $gray-light;
+  			.fa{
+  				color: $blue2;
+  				font-size: 22px;
+  				vertical-align: middle;
+  				margin-right: 8px;
+  			}
+  		}
+  		.post-tags{
+  			a{
+  				display: inline-block;
+  				margin-right: 12px;
+  				vertical-align: top;
+  				color: $blue2;
+  				font-weight: 600;
+  				&:hover{
+  					color: $blue3;
+  				}
   			}
   		}
   	}
+  	.pagination-block{
+  		border-top: 1px solid $gray-light;
+  		padding-top: 27px;
+  	}
   }
+/*
+ * Styles for Single news article, single blog
+ */
+ .banner{
+ 	position: relative;
+ 	overflow: hidden;
+ 	min-height: 355px;
+ 	&:before{
+ 		position: absolute;
+ 		top: 0;
+ 		right: 0;
+ 		width: 100%;
+ 		height: 100%;
+ 		content: "";
+ 		background-color: transparentize($black, 0.8);
+ 		z-index: -1;
+ 	}
+ 	&:after{
+ 		content: "";
+ 		display: inline-block;
+ 		vertical-align: middle;
+ 		min-height: 355px;
+ 	}
+ 	& > *{
+ 		display: inline-block;
+ 		vertical-align: middle;
+ 	}
+ 	.post-meta{
+ 		font-size: 27px;
+ 		font-weight: 300;
+ 		position: relative;
+ 		color: $white;
+ 		z-index: 1;
+ 		@media only screen and (max-width: $screen-xs-max){
+ 			font-size: 18px;
+ 		}
+ 		h1{
+ 			font-size: 42px;
+ 			font-weight: 400;
+ 			margin: 0 0 27px;
+ 			@media only screen and (max-width: $screen-xs-max){
+ 				font-size: 32px;
+ 			}
+ 		}
+ 		.fa{
+ 			color: $yellow;
+ 		}
+ 	}
+ }
+ .bg-stretch{
+ 	position: absolute;
+ 	top: 0;
+ 	left: 0;
+ 	width: 100%;
+ 	height: 100%;
+ 	overflow: hidden;
+ 	z-index: -2;
+ 	img{
+ 		width: 100%;
+ 		height: auto;
+ 	}
+ }
+ #two-columns{
+ 	padding-top: 22px;
+	padding-bottom: 40px;
+ }
+ .single-article{
+ 	font-weight: 300;
+ 	line-height: 27px;
+ 	img{
+ 		max-width: 100%;
+ 		margin-bottom: 27px;
+ 	}
+ 	p{
+ 		margin-bottom: 33px;
+ 	}
+ 	a{
+ 		font-weight: 500;
+ 		&:hover{
+ 			text-decoration: underline;
+ 		}
+ 	}
+ 	h2{
+ 		font-size: 22px;
+ 		font-weight: 500;
+ 		margin: 0 0 15px;
+ 	}
+ 	ul,
+ 	.unordered-list{
+ 		margin: 0 0 27px;
+ 		list-style: none;
+ 		padding: 0;
+ 		li{
+ 			margin-bottom: 10px;
+ 			position: relative;
+ 			padding-left: 22px;
+ 			&:before{
+ 				position: absolute;
+ 				content: "\f111";
+ 				font-family: FontAwesome;
+ 				font-size: 12px;
+ 				left: 0;
+ 				color: $blue2;
+ 			}
+ 		}
+ 	}
+ 	ol,
+ 	.ordered-list{
+ 		margin: 0 0 27px;
+ 		list-style: none;
+ 		padding: 0;
+ 		counter-reset: item;
+ 		li{
+ 			margin-bottom: 10px;
+ 			position: relative;
+ 			padding-left: 22px;
+ 			&:before{
+ 				position: absolute;
+ 				color: $blue2;
+ 				left: 0;
+ 				counter-increment: item;
+ 				content: counters(item, " ");
+ 			}
+ 		}
+ 	}
+ }
+ /* Single article sidebar */
+ #sidebar{
+ 	h2{
+ 		font-size: 15px;
+ 		line-height: 22px;
+ 		font-weight: 500;
+ 		text-transform: uppercase;
+ 		border-bottom: 1px solid $gray3;
+ 		padding-bottom: 5px;
+ 		margin: 0;
+ 	}
+ 	.list{
+ 		li{
+ 			margin-bottom: 15px;
+ 		}
+ 	}
+ }
+/*
+ * *************************************************************
+ */
   .full-width{
   	@media only screen and (max-width: 639px){
   		width: 100%;
@@ -2020,8 +2140,6 @@ header{
 	font-size: 18px;
 	font-weight: 700;
 	margin: 0;
-	position: relative;
-	top: -4px;
 	li{
 		padding: 0 1px;
 		display:inline-block;
