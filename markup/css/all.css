@@ -1,6 +1,8 @@
 /* Show active breakpoint in top right corner of viewport*/
 /* $mq-show-breakpoints: (mobile, mobileLandscape, tablet, desktop, widescreen, tvscreen);*/
 /* custom variables and override bootstrap variables*/
+/* Lighter */
+/* darker */
 .sample-block .status:after, header:after, .cycle-gallery .mask:after, .work-container dl:after {
   content: " ";
   display: block;
@@ -10,6 +12,276 @@
   margin: 0;
   padding: 0;
   list-style: none; }
+
+.list--unordered {
+  padding: 18px 0;
+  color: #298fb6;
+  margin-bottom: 0; }
+  .list--unordered li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 8px; }
+    .list--unordered li:before {
+      font-family: FontAwesome;
+      font-size: 14px;
+      line-height: 1;
+      content: "\f0a9";
+      position: absolute;
+      left: 0;
+      top: 6px;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale; }
+
+/* Adjusting height to auto to the elements below the screen size 640px.
+ * which is given by js to make the sibling blocks of same height.
+ */
+@media only screen and (max-width: 639px) {
+  .js-same-height {
+    height: auto !important; } }
+
+/*
+* This is a common styles for different list within the about us page
+* Services, Values, etc..
+*/
+.has-list .icon-holder {
+  width: 48px;
+  height: 48px;
+  border: 2px solid #f1dd31;
+  text-align: center; }
+  .has-list .icon-holder .fa {
+    line-height: 44px;
+    font-size: 27px;
+    color: #f1dd31; }
+
+.has-list .text-holder {
+  overflow: hidden;
+  padding-left: 18px; }
+
+.has-list h3 {
+  color: #f1dd31;
+  font-size: 27px;
+  line-height: 48px;
+  font-weight: 600;
+  margin-bottom: 12px; }
+  @media only screen and (max-width: 767px) {
+    .has-list h3 {
+      font-size: 22px; } }
+
+/* ==========================================================================
+   Section heading
+   ========================================================================== */
+.section-heading {
+  margin: 0 0 44px; }
+  .section-heading h2,
+  .section-heading h1 {
+    font-size: 40px;
+    font-weight: 600;
+    margin: 0 0 20px;
+    color: #000; }
+    @media only screen and (max-width: 767px) {
+      .section-heading h2,
+      .section-heading h1 {
+        font-size: 27px; } }
+
+/* ==========================================================================
+   Cards layout
+   ========================================================================== */
+.card {
+  color: #4d4d4d;
+  background: #fff;
+  margin-bottom: 27px; }
+
+.card__img-holder img {
+  height: 238px;
+  -o-object-fit: cover;
+  object-fit: cover; }
+
+.card__title {
+  font-size: 22px;
+  line-height: 27px;
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 12px; }
+
+.card__content {
+  padding: 27px; }
+  .card__content p {
+    font-size: 14px;
+    line-height: 22px; }
+
+.card__footer {
+  padding: 18px 27px;
+  background: #eee; }
+  .card__footer .card__btn-more {
+    color: #000;
+    border-bottom: 2px solid #0f57b7; }
+    .card__footer .card__btn-more:hover {
+      color: #0f57b7; }
+
+/* ==========================================================================
+   Backgrounds
+   ========================================================================== */
+.bg--white {
+  background: #fff; }
+
+/*
+  * Stylesheet for Dog Enquiry Page.
+  * 
+ */
+.breed-section {
+  padding: 59px 0; }
+
+.breed {
+  border: 1px solid #eee;
+  background: #fff;
+  padding: 14px;
+  margin-bottom: 27px;
+  position: relative; }
+  .breed .breed__image {
+    height: 262px;
+    overflow: hidden;
+    margin-bottom: 14px; }
+    .breed .breed__image img {
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover;
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+      transform: scale(1);
+      -webkit-transition: all 0.33s ease-in-out;
+      -o-transition: all 0.33s ease-in-out;
+      transition: all 0.33s ease-in-out; }
+      .breed .breed__image img:hover {
+        -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        transform: scale(1.2); }
+  .breed .breed__detail {
+    padding: 22px 0; }
+    .breed .breed__detail h2 {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 0;
+      color: #000;
+      font-weight: 600;
+      overflow: hidden; }
+
+.breed__enquiry {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  -webkit-transform: translate(-50%, 50%);
+  -ms-transform: translate(-50%, 50%);
+  transform: translate(-50%, 50%); }
+  .breed__enquiry.btn {
+    margin-bottom: 0; }
+
+.section--services__section {
+  padding: 39px 0; }
+  .section--services__section .services__list {
+    padding: 40px 27px 0; }
+
+.services__heading {
+  padding-bottom: 40px; }
+  @media only screen and (max-width: 991px) {
+    .services__heading {
+      padding-bottom: 0; } }
+  .services__heading .section-heading {
+    margin-bottom: 0; }
+
+.services__list {
+  padding-top: 39px; }
+
+/* service list */
+.service {
+  margin-bottom: 40px; }
+  .service .icon-holder {
+    border-color: #298fb6; }
+    .service .icon-holder .fa {
+      color: #298fb6; }
+  .service h3 {
+    color: #000; }
+    .service h3 a:hover {
+      color: #298fb6; }
+  .service .service__btn-holder {
+    padding-left: 64px;
+    padding-top: 26px; }
+  .service .more-link {
+    color: #000;
+    border-bottom: 2px solid #298fb6; }
+    .service .more-link:hover {
+      color: #298fb6; }
+
+/*
+ * Service single page
+ */
+/* Service hero area used image stretch plugin */
+.service__title {
+  background: rgba(0, 0, 0, 0.4);
+  display: inline-block;
+  vertical-align: middle;
+  padding: 12px 27px;
+  font-size: 59px;
+  font-weight: 500;
+  color: #fff;
+  margin: 0; }
+  @media only screen and (max-width: 767px) {
+    .service__title {
+      font-size: 32px; } }
+
+.section--service-info {
+  padding-top: 39px; }
+  .section--service-info .section-heading {
+    margin-bottom: 0; }
+    .section--service-info .section-heading h3 {
+      font-size: 22px;
+      color: #000;
+      margin-bottom: 12px; }
+
+.service__highlight h4 {
+  font-size: 33px;
+  font-weight: 600;
+  color: #000;
+  margin: 0; }
+  @media only screen and (max-width: 767px) {
+    .service__highlight h4 {
+      font-size: 22px; } }
+
+@media only screen and (min-width: 992px) {
+  .service__highlight {
+    margin-top: -59px; } }
+
+/* service sub-services */
+.section--service-category {
+  padding: 39px 0; }
+  .section--service-category .section-heading {
+    margin-bottom: 0; }
+  @media only screen and (max-width: 639px) {
+    .section--service-category .col-xs-6 {
+      float: none;
+      width: 100%; } }
+
+/* Related articles */
+.section--related {
+  padding: 39px 0; }
+
+/* Explore more services or Learn more about the service */
+.section--explore {
+  background: #298fb6; }
+
+.explore__btn {
+  display: block;
+  padding: 59px;
+  font-size: 40px;
+  line-height: 50px;
+  color: #fff; }
+  .explore__btn:hover {
+    color: #fff; }
+  @media only screen and (max-width: 767px) {
+    .explore__btn {
+      font-size: 27px;
+      line-height: 37px;
+      padding: 27px; } }
 
 @font-face {
   font-family: 'icomoon';
@@ -81,6 +353,10 @@
 
 body {
   min-width: 320px; }
+
+@media only screen and (min-width: 1024px) {
+  #wrapper {
+    padding-top: 0 !important; } }
 
 #main .main-holder {
   width: 100%;
@@ -178,6 +454,16 @@ a {
   -ms-transform: translateed(0, 0, 0);
   transform: translateed(0, 0, 0); }
 
+@media only screen and (max-width: 1023px) {
+  .nav-wrap {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99; } }
+
+.nav-wrap .caret {
+  margin-left: 8px; }
+
 .navbar {
   padding: 13px 0 18px; }
   @media only screen and (max-width: 480px) {
@@ -213,19 +499,28 @@ a {
     margin: 0; }
     .navbar-nav li + li {
       -webkit-box-shadow: 0 -1px 0 0 #e7e7e7;
-      box-shadow: 0 -1px 0 0 #e7e7e7; }
-    .navbar-nav li a {
-      padding: 10px 41px; } }
+      box-shadow: 0 -1px 0 0 #e7e7e7; } }
 
-.section-heading {
-  margin: 0 0 44px; }
-  .section-heading h2 {
-    font-size: 42px;
-    margin: 0 0 20px;
-    color: #000; }
-    @media only screen and (max-width: 767px) {
-      .section-heading h2 {
-        font-size: 32px; } }
+.dropdown-menu {
+  font-size: 16px; }
+  .dropdown-menu > li > a {
+    padding-top: 8px;
+    padding-bottom: 8px; }
+
+/*Add class on burger menu click*/
+.mobile-nav-active body, html.mobile-nav-active {
+  overflow: hidden;
+  position: relative;
+  height: auto; }
+
+.mobile-nav-active .nav-wrap {
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  width: 85%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll; }
 
 .intro-section {
   padding: 59px 0 0; }
@@ -474,13 +769,13 @@ a {
     right: 0;
     bottom: 0; }
   .hero-banner .section-heading h1 {
-    text-transform: uppercase;
-    font-size: 42px;
+    text-transform: capitalize;
+    font-size: 59px;
     font-weight: 600;
     color: #f1dd31; }
     @media only screen and (max-width: 767px) {
       .hero-banner .section-heading h1 {
-        font-size: 32px; } }
+        font-size: 40px; } }
   .hero-banner .section-heading p {
     font-weight: 300; }
 
@@ -559,34 +854,6 @@ a {
     .info-part .text-block .more-link:hover, .values-block .text-block .more-link:hover {
       color: #f1dd31; }
 
-/*
-    * This is a common styles for different list within the about us page
-    * Services, Values, etc..
-    */
-.has-list .icon-holder {
-  width: 48px;
-  height: 48px;
-  border: 2px solid #f1dd31;
-  text-align: center; }
-  .has-list .icon-holder .fa {
-    line-height: 44px;
-    font-size: 27px;
-    color: #f1dd31; }
-
-.has-list .text-holder {
-  overflow: hidden;
-  padding-left: 18px; }
-
-.has-list h3 {
-  color: #f1dd31;
-  font-size: 27px;
-  line-height: 48px;
-  font-weight: 600;
-  margin-bottom: 12px; }
-  @media only screen and (max-width: 767px) {
-    .has-list h3 {
-      font-size: 22px; } }
-
 /* Declaration block 
       ========================================================================== */
 .values-block .section-heading p {
@@ -601,25 +868,6 @@ a {
   padding: 39px 0; }
   .service-block h2 {
     color: #000; }
-
-.service-item {
-  margin-bottom: 48px; }
-  .service-item .icon-holder {
-    border-color: #298fb6; }
-    .service-item .icon-holder .fa {
-      color: #298fb6; }
-  .service-item h3 {
-    color: #000; }
-    .service-item h3 a:hover {
-      color: #298fb6; }
-  .service-item .btn-holder {
-    padding-left: 64px;
-    padding-top: 26px; }
-  .service-item .more-link {
-    color: #000;
-    border-bottom: 2px solid #298fb6; }
-    .service-item .more-link:hover {
-      color: #298fb6; }
 
 /* Team members block
      ========================================================================== */
@@ -881,7 +1129,8 @@ a {
 .banner {
   position: relative;
   overflow: hidden;
-  min-height: 355px; }
+  min-height: 355px;
+  white-space: nowrap; }
   .banner:before {
     position: absolute;
     top: 0;
@@ -898,7 +1147,8 @@ a {
     min-height: 355px; }
   .banner > * {
     display: inline-block;
-    vertical-align: middle; }
+    vertical-align: middle;
+    white-space: normal; }
   .banner .post-meta {
     font-size: 27px;
     font-weight: 300;
@@ -1387,27 +1637,29 @@ a {
     padding-left: 12px;
     padding-right: 12px; }
 
-.middle-position {
-  white-space: nowrap;
-  min-height: 190px; }
-  .middle-position:after {
-    content: '';
-    display: inline-block;
-    height: 100%;
-    width: 1px;
-    overflow: hidden;
-    margin: 0;
-    vertical-align: middle; }
-  .middle-position > * {
-    vertical-align: middle;
-    display: inline-block;
-    white-space: normal; }
-  @media only screen and (max-width: 767px) {
-    .middle-position {
-      height: auto !important;
-      min-height: 10px;
-      padding: 9px 0; } }
-
+/* .middle-position {*/
+/* 	white-space:nowrap;*/
+/* 	min-height:190px;*/
+/* 	&:after {*/
+/* 		content:'';*/
+/* 		display:inline-block;*/
+/* 		height:100%;*/
+/* 		width:1px;*/
+/* 		overflow:hidden;*/
+/* 		margin:0;*/
+/* 		vertical-align:middle;*/
+/* 	}*/
+/* 	>*{*/
+/* 		vertical-align:middle;*/
+/* 		display:inline-block;*/
+/* 		white-space:normal;*/
+/* 	}*/
+/* 	@media only screen and (max-width: $screen-xs-max) {*/
+/* 		height: auto !important;*/
+/* 		min-height: 10px;*/
+/* 		padding: 9px 0;*/
+/* 	}*/
+/* }*/
 .bottom-position {
   position: relative; }
   .bottom-position > * {

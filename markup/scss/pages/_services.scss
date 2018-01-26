@@ -1,0 +1,137 @@
+  .section--services__section{
+    padding: 39px 0;
+    .services__list{
+      padding: 40px 27px 0;
+    }
+  }
+
+  .services__heading{
+    padding-bottom: 40px;
+    @media only screen and (max-width: $screen-sm-max){
+      padding-bottom: 0;
+    }
+    .section-heading{
+      margin-bottom: 0;
+    }
+  }
+
+  .services__list{
+    padding-top: 39px;
+  }
+
+/* service list */
+
+  .service{
+    margin-bottom: 40px;
+    .icon-holder{
+      border-color: $blue2;
+      .fa{
+        color: $blue2;
+      }
+    }
+    h3{
+      color: $black;
+      a{
+        &:hover{
+          color: $blue2;
+        }
+      }
+    }
+    .service__btn-holder{
+      padding-left: 64px;
+      padding-top: 26px;
+    }
+    .more-link{
+      color: $black;
+      border-bottom: 2px solid $blue2;
+      &:hover{
+        color: $blue2;
+      }
+    }
+  }
+
+/*
+ * Service single page
+ */
+ /* Service hero area used image stretch plugin */
+.service__title{
+  background: transparentize($black, 0.6);
+  display: inline-block;
+  vertical-align: middle;
+  padding: 12px 27px;
+  font-size: 59px;
+  font-weight: 500;
+  color: $white;
+  margin: 0;
+  @media only screen and (max-width: $screen-xs-max){
+    font-size: 32px;
+  }
+}
+
+.section--service-info{
+  padding-top: 39px;
+  .section-heading{
+    margin-bottom: 0;
+    h3{
+      font-size: 22px;
+      color: $black;
+      margin-bottom: 12px;
+    }
+  }
+}
+
+.service__highlight{
+  h4{
+    font-size: 33px;
+    font-weight: 600;
+    color: $black;
+    margin: 0;
+    @media only screen and (max-width: $screen-xs-max){
+      font-size: 22px;
+    }
+  }
+  @media only screen and (min-width: $screen-md){
+    margin-top: -59px;
+  }
+}
+
+/* service sub-services */
+.section--service-category{
+  padding: 39px 0;
+  .section-heading{
+    margin-bottom: 0;
+  }
+  .col-xs-6{
+    @media only screen and (max-width: 639px){
+      float: none;
+      width: 100%;
+    }
+  }
+}
+
+/* Related articles */
+.section--related{
+  padding: 39px 0;
+}
+
+
+/* Explore more services or Learn more about the service */
+
+.section--explore{
+  background: $blue2;
+}
+.explore__btn{
+  display: block;
+  padding: 59px;
+  font-size: 40px;
+  line-height: 50px;
+  color: $white;
+  &:hover{
+    color: $white;
+  }
+  @media only screen and (max-width: $screen-xs-max){
+    font-size: 27px;
+    line-height: 37px;
+    padding: 27px;
+  }
+}

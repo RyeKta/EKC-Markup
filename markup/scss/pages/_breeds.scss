@@ -1,0 +1,53 @@
+ /*
+  * Stylesheet for Dog Enquiry Page.
+  * 
+ */
+ .breed-section{
+	padding: 59px 0;
+ }
+ .breed{
+ 	border: 1px solid $gray-light;
+ 	background: $white;
+ 	padding: 14px;
+ 	margin-bottom: 27px;
+ 	position: relative;
+ 	.breed__image{
+ 		height: 262px;
+ 		overflow: hidden;
+ 		margin-bottom: 14px;
+ 		img{
+ 			height: 100%;
+ 			-o-object-fit: cover;
+ 			   object-fit: cover;
+ 			-webkit-transform: scale(1);
+ 			        transform: scale(1);
+ 			-webkit-transition: all 0.33s ease-in-out;
+ 					transition: all 0.33s ease-in-out;
+ 			   &:hover{
+ 			   	-webkit-transform: scale(1.2);
+ 			   	        transform: scale(1.2);
+ 			   }
+ 		}
+ 	}
+ 	.breed__detail{
+ 		padding: 22px 0;
+ 		h2{
+ 			text-transform: uppercase;
+ 			letter-spacing: 1px;
+ 			margin: 0;
+ 			color: $black;
+ 			font-weight: 600;
+			overflow: hidden;
+ 		}
+ 	}
+ }
+ .breed__enquiry{
+ 	position: absolute;
+ 	left: 50%;
+ 	bottom: 0;
+ 	-webkit-transform: translate(-50%,50%);
+ 	        transform: translate(-50%,50%);
+ 	&.btn{
+ 		margin-bottom: 0;
+ 	}
+ }

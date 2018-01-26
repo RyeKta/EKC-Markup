@@ -1,0 +1,144 @@
+.list--unordered{
+	padding: 18px 0;
+	color: $blue2;
+	margin-bottom: 0;
+	li{
+		position: relative;
+		padding-left: 22px;
+		margin-bottom: 8px;
+		&:before{
+			font-family: FontAwesome;
+			font-size: 14px;
+			line-height: 1;
+			content: "\f0a9";
+			position: absolute;
+			left: 0;
+			top: 6px;
+			text-rendering: auto;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
+	}
+}
+
+
+
+
+/* Adjusting height to auto to the elements below the screen size 640px.
+ * which is given by js to make the sibling blocks of same height.
+ */
+.js-same-height{
+	@media only screen and (max-width: 639px){
+		height: auto !important;
+	}
+}
+
+
+
+
+
+/*
+* This is a common styles for different list within the about us page
+* Services, Values, etc..
+*/
+.has-list{
+	.icon-holder{
+		width: 48px;
+		height: 48px;
+		border: 2px solid $yellow;
+		text-align: center;
+		.fa{
+			line-height: 44px;
+			font-size: 27px;
+			color: $yellow;
+		}
+	}
+	.text-holder{
+		overflow: hidden;
+		padding-left: 18px;
+	}
+	h3{
+		color: $yellow;
+		font-size: 27px;
+		line-height: 48px;
+		font-weight: 600;
+		margin-bottom: 12px;
+		@media only screen and (max-width: $screen-xs-max){
+			font-size: 22px;
+		}
+	}
+}
+
+
+
+
+
+/* ==========================================================================
+   Section heading
+   ========================================================================== */
+.section-heading{
+	margin: 0 0 44px;
+	h2,
+	h1{
+		font-size: 40px;
+		font-weight: 600;
+		margin: 0 0 20px;
+		color: $black;
+		@media only screen and (max-width: $screen-xs-max){
+			font-size: 27px;
+		}
+	}
+}
+
+
+
+
+
+/* ==========================================================================
+   Cards layout
+   ========================================================================== */
+.card{
+  color: $gray14;
+  background: $white;
+  margin-bottom: 27px;
+}
+.card__img-holder{
+  img{
+    height: 238px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+.card__title{
+  font-size: 22px;
+  line-height: 27px;
+  font-weight: 500;
+  color: $black;
+  margin-bottom: 12px;
+}
+.card__content{
+  padding: 27px;
+  p{
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+.card__footer{
+  padding: 18px 27px;
+  background: $gray-light;
+  .card__btn-more{
+    color: $black;
+    border-bottom: 2px solid $blue3;
+    &:hover{
+      color: $blue3;
+    }
+  }
+}
+
+
+/* ==========================================================================
+   Backgrounds
+   ========================================================================== */
+.bg--white{
+	background:  $white;
+}

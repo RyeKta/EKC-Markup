@@ -7,6 +7,7 @@ jQuery(function(){
 	initSameHeight();
 	initFormValidation();
 	initInputNumber();
+	//parallax
 	jQuery(".bg-parallax").parallaxBlock({
 		parallaxOffset: -50,
 		fallbackClass: 'fallback-class'
@@ -20,8 +21,8 @@ jQuery(function(){
 	gmapHeight();
 	initBackgroundResize();
 });
-	//google map
-	function myMap() {
+//initializing google map
+function myMap() {
 		var mapCenter = new google.maps.LatLng(51.508742,-0.120850), //latitute, longitude of place
 		mapCanvas = document.getElementById("googleMap"),
 		mapOptions = {
@@ -52,25 +53,28 @@ jQuery(function(){
 
 jQuery(window).on('load', function(){
 	jQuery('.container-fluid').css({opacity: 1});
+	if($(window).width()<1024){
+		initCalculateHeaderHeight();
+	}
 });
 
 $(window).scroll(function(){
 	var windowWidth = $(window).width();
 	var stickyNav = $("#sticky-nav");
 
-	if($(window).scrollTop() > 190 ){
+	if(windowWidth > 991 && $(window).scrollTop() > 190){
 		stickyNav.addClass("sticky");
 	}else{
 		stickyNav.removeClass("sticky");
 	}
 
-	if($(window).scrollTop() > 200){
+	if(windowWidth > 991 && $(window).scrollTop() > 200){
 		stickyNav.addClass("offset");
 	}else{
 		stickyNav.removeClass("offset");
 	}
 
-	if($(window).scrollTop() > 500){
+	if(windowWidth > 991 && $(window).scrollTop() > 500){
 		stickyNav.addClass("scrolling");
 	}else{
 		stickyNav.removeClass("scrolling");
@@ -91,13 +95,47 @@ function gmapHeight(){
 	var $mapBlock = $('#googleMap');
 	$mapBlock.css('height', $mapHeight);
 }
+//Add class on html on burger-menu click
+$('.burger-menu').click(function(){
+	$('html').toggleClass('mobile-nav-active');
+	//adding padding-top if the menu is not open
+	if($(window).width() < 1024 && $('html').hasClass('mobile-nav-active')){
+		jQuery('#wrapper').css('padding-top', '0');
+	}else if($(window).width() < 1024 && !$('html').hasClass('mobile-nav-active')){
+		initCalculateHeaderHeight();
+	}
+});
+
 //window resize
 $(window).resize(function(){
+	initBackgroundResize();
 	carouselMarginTop();
 	gmapHeight();
+	//Remove classes from html, burger-menu button, navbar-container in window resize when
+	//window width is greater than 1023px.
+	if($(this).width()>1023){
+		if($('html').hasClass('mobile-nav-active')){
+			$('html').removeClass('mobile-nav-active');
+			$('.burger-menu').addClass('collapsed');
+			$('.navbar-collapse').removeClass('in');
+		}else{
+			$('.navbar-collapse').addclass('collapse in');
+			$('.burger-menu').removeClass('collapsed');
+		}
+	};
+	//claculate height of header to assign padding-top to #wrapper element
+	//when width is less than 1024px and when burger menu is not clicked.
+	if($(this).width() < 1024 && !$('html').hasClass('mobile-nav-active')){
+		initCalculateHeaderHeight();
+	}
 })
 
-// form validation
+//Calculate header height
+function initCalculateHeaderHeight(){
+	var headerHeight = jQuery("#sticky-nav").height();
+	jQuery('#wrapper').css('paddingTop', headerHeight);
+}
+// form validation for contact form
 function initFormValidation() {
 	jQuery('.contact-form').formValidation({
 		errorClass: 'error',
@@ -298,8 +336,8 @@ function initSameHeight() {
 		flexible: true,
 		multiLine: true
 	});
-	jQuery('.services-list').sameHeight({
-		elements: '.text-holder',
+	jQuery('.services__list').sameHeight({
+		elements: '.service__detail',
 		flexible: true,
 		multiLine: true
 	});
@@ -312,6 +350,12 @@ function initSameHeight() {
 		elements: '.post-card',
 		flexible: true,
 		multiLine: true
+	});
+	jQuery('.js-same-height-holder').sameHeight({
+		elements: '.js-same-height',
+		flexible: true,
+		multiLine: true,
+		biggestHeight: true
 	});
 	jQuery('#footer').sameHeight({
 		elements: '.same-height',
@@ -1337,6 +1381,92 @@ jQuery.onFontResize = (function($) {
 	};
 }(jQuery));
 
+/*
+ * Image Stretch module
+ */
+var ImageStretcher = {
+	getDimensions: function(data) {
+		// calculate element coords to fit in mask
+		var ratio = data.imageRatio || (data.imageWidth / data.imageHeight),
+			slideWidth = data.maskWidth,
+			slideHeight = slideWidth / ratio;
+
+		if(slideHeight < data.maskHeight) {
+			slideHeight = data.maskHeight;
+			slideWidth = slideHeight * ratio;
+		}
+		return {
+			width: slideWidth,
+			height: slideHeight,
+			top: (data.maskHeight - slideHeight) / 2,
+			left: (data.maskWidth - slideWidth) / 2
+		};
+	},
+	getRatio: function(image) {
+		if(image.prop('naturalWidth')) {
+			return image.prop('naturalWidth') / image.prop('naturalHeight');
+		} else {
+			var img = new Image();
+			img.src = image.prop('src');
+			return img.width / img.height;
+		}
+	},
+	imageLoaded: function(image, callback) {
+		var self = this;
+		var loadHandler = function() {
+			callback.call(self);
+		};
+		if(image.prop('complete')) {
+			loadHandler();
+		} else {
+			image.one('load', loadHandler);
+		}
+	},
+	resizeHandler: function() {
+		var self = this;
+		jQuery.each(this.imgList, function(index, item) {
+			if(item.image.prop('complete')) {
+				self.resizeImage(item.image, item.container);
+			}
+		});
+	},
+	resizeImage: function(image, container) {
+		this.imageLoaded(image, function() {
+			var styles = this.getDimensions({
+				imageRatio: this.getRatio(image),
+				maskWidth: container.width(),
+				maskHeight: container.height()
+			});
+			image.css({
+				width: styles.width,
+				height: styles.height,
+				marginTop: styles.top,
+				marginLeft: styles.left
+			});
+		});
+	},
+	add: function(options) {
+		var container = jQuery(options.container ? options.container : window),
+			image = typeof options.image === 'string' ? container.find(options.image) : jQuery(options.image);
+
+		// resize image
+		this.resizeImage(image, container);
+
+		// add resize handler once if needed
+		if(!this.win) {
+			this.resizeHandler = jQuery.proxy(this.resizeHandler, this);
+			this.imgList = [];
+			this.win = jQuery(window);
+			this.win.on('resize orientationchange', this.resizeHandler);
+		}
+
+		// store item in collection
+		this.imgList.push({
+			container: container,
+			image: image
+		});
+	}
+};
 
 /*!
  * JavaScript Custom Forms
@@ -2104,93 +2234,6 @@ jQuery.onFontResize = (function($) {
   };
 }(jQuery));
 
-
-/*
- * Image Stretch module
- */
-var ImageStretcher = {
-	getDimensions: function(data) {
-		// calculate element coords to fit in mask
-		var ratio = data.imageRatio || (data.imageWidth / data.imageHeight),
-			slideWidth = data.maskWidth,
-			slideHeight = slideWidth / ratio;
-
-		if(slideHeight < data.maskHeight) {
-			slideHeight = data.maskHeight;
-			slideWidth = slideHeight * ratio;
-		}
-		return {
-			width: slideWidth,
-			height: slideHeight,
-			top: (data.maskHeight - slideHeight) / 2,
-			left: (data.maskWidth - slideWidth) / 2
-		};
-	},
-	getRatio: function(image) {
-		if(image.prop('naturalWidth')) {
-			return image.prop('naturalWidth') / image.prop('naturalHeight');
-		} else {
-			var img = new Image();
-			img.src = image.prop('src');
-			return img.width / img.height;
-		}
-	},
-	imageLoaded: function(image, callback) {
-		var self = this;
-		var loadHandler = function() {
-			callback.call(self);
-		};
-		if(image.prop('complete')) {
-			loadHandler();
-		} else {
-			image.one('load', loadHandler);
-		}
-	},
-	resizeHandler: function() {
-		var self = this;
-		jQuery.each(this.imgList, function(index, item) {
-			if(item.image.prop('complete')) {
-				self.resizeImage(item.image, item.container);
-			}
-		});
-	},
-	resizeImage: function(image, container) {
-		this.imageLoaded(image, function() {
-			var styles = this.getDimensions({
-				imageRatio: this.getRatio(image),
-				maskWidth: container.width(),
-				maskHeight: container.height()
-			});
-			image.css({
-				width: styles.width,
-				height: styles.height,
-				marginTop: styles.top,
-				marginLeft: styles.left
-			});
-		});
-	},
-	add: function(options) {
-		var container = jQuery(options.container ? options.container : window),
-			image = typeof options.image === 'string' ? container.find(options.image) : jQuery(options.image);
-
-		// resize image
-		this.resizeImage(image, container);
-
-		// add resize handler once if needed
-		if(!this.win) {
-			this.resizeHandler = jQuery.proxy(this.resizeHandler, this);
-			this.imgList = [];
-			this.win = jQuery(window);
-			this.win.on('resize orientationchange', this.resizeHandler);
-		}
-
-		// store item in collection
-		this.imgList.push({
-			container: container,
-			image: image
-		});
-	}
-};
 
 /*!
  * JavaScript Custom Forms : Radio Module

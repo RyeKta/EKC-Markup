@@ -20,6 +20,11 @@ $mq-breakpoints: (
 @import "base/markup-mixins";
 @import "mq";
 
+@import "layout/common";
+
+@import "pages/breeds";
+@import "pages/services";
+
 @font-face {
 	font-family: 'icomoon';
 	src:  url('../fonts/icomoon.eot?jw9ols');
@@ -114,6 +119,11 @@ body{
 	min-width: 320px;
 }
 
+#wrapper{
+	@media only screen and (min-width: $screen-lg){
+		padding-top: 0 !important;
+	}
+}
 #main{
 	.main-holder{
 		width: 100%;
@@ -228,6 +238,15 @@ a{
 		-webkit-transform: translate3d(0, 0 ,0);
 		        transform: translateed(0, 0, 0);
 	}
+	@media only screen and (max-width: 1023px){
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 99;
+	}
+	.caret{
+		margin-left: 8px;
+	}
 }
 .navbar{
 	padding: 13px 0 18px;
@@ -273,23 +292,40 @@ a{
 				-webkit-box-shadow: 0 -1px 0 0 $gray3;
 				        box-shadow: 0 -1px 0 0 $gray3;
 			}
-			a{
-				padding: 10px 41px;
-			}
 		}
 	}
 }
-.section-heading{
-	margin: 0 0 44px;
-	h2{
-		font-size: 42px;
-		margin: 0 0 20px;
-		color: $black;
-		@media only screen and (max-width: $screen-xs-max){
-			font-size: 32px;
+.dropdown-menu{
+	font-size: 16px;
+	& > li{
+		> a{
+			padding-top: 8px;
+			padding-bottom: 8px;
 		}
 	}
 }
+/*Add class on burger menu click*/
+html{
+	@at-root .mobile-nav-active body,
+	&.mobile-nav-active{
+		overflow: hidden;
+		position: relative;
+		height: auto;
+	}
+}
+
+.mobile-nav-active{
+	.nav-wrap{
+		background-color: $white;
+		top: 0;
+		left: 0;
+		width: 85%;
+		height: 100%;
+		overflow-x: hidden;
+		overflow-y: scroll;
+	}
+}
+
 .intro-section{
 	padding: 59px 0 0; 
 }
@@ -575,12 +611,12 @@ a{
 	}
 	.section-heading{
 		h1{
-			text-transform: uppercase;
-			font-size: 42px;
+			text-transform: capitalize;
+			font-size: 59px;
 			font-weight: 600;
 			color: $yellow;
 			@media only screen and (max-width: $screen-xs-max){
-				font-size: 32px;
+				font-size: 40px;
 			}
 		}
 		p{
@@ -678,37 +714,6 @@ a{
    		}
    	}
    }
-   /*
-    * This is a common styles for different list within the about us page
-    * Services, Values, etc..
-    */
-    .has-list{
-    	.icon-holder{
-    		width: 48px;
-    		height: 48px;
-    		border: 2px solid $yellow;
-    		text-align: center;
-    		.fa{
-    			line-height: 44px;
-    			font-size: 27px;
-    			color: $yellow;
-    		}
-    	}
-    	.text-holder{
-    		overflow: hidden;
-    		padding-left: 18px;
-    	}
-    	h3{
-    		color: $yellow;
-    		font-size: 27px;
-    		line-height: 48px;
-    		font-weight: 600;
-    		margin-bottom: 12px;
-    		@media only screen and (max-width: $screen-xs-max){
-    			font-size: 22px;
-    		}
-    	}
-    }
    /* Declaration block 
       ========================================================================== */
   .values-block{
@@ -729,34 +734,6 @@ a{
 	h2{
 		color: $black;
 	}
-  }
-  .service-item{
-  	margin-bottom: 48px;
-  	.icon-holder{
-  		border-color: $blue2;
-  		.fa{
-  			color: $blue2;
-  		}
-  	}
-  	h3{
-  		color: $black;
-  		a{
-  			&:hover{
-  				color: $blue2;
-  			}
-  		}
-  	}
-  	.btn-holder{
-  		padding-left: 64px;
-  		padding-top: 26px;
-  	}
-  	.more-link{
-  		color: $black;
-  		border-bottom: 2px solid $blue2;
-  		&:hover{
-  			color: $blue2;
-  		}
-  	}
   }
   /* Team members block
      ========================================================================== */
@@ -1074,6 +1051,7 @@ a{
  	position: relative;
  	overflow: hidden;
  	min-height: 355px;
+ 	white-space: nowrap;
  	&:before{
  		position: absolute;
  		top: 0;
@@ -1093,6 +1071,7 @@ a{
  	& > *{
  		display: inline-block;
  		vertical-align: middle;
+ 		white-space: normal;
  	}
  	.post-meta{
  		font-size: 27px;
@@ -1712,29 +1691,29 @@ a{
 	}
 }
 
-.middle-position {
-	white-space:nowrap;
-	min-height:190px;
-	&:after {
-		content:'';
-		display:inline-block;
-		height:100%;
-		width:1px;
-		overflow:hidden;
-		margin:0;
-		vertical-align:middle;
-	}
-	>*{
-		vertical-align:middle;
-		display:inline-block;
-		white-space:normal;
-	}
-	@media only screen and (max-width: $screen-xs-max) {
-		height: auto !important;
-		min-height: 10px;
-		padding: 9px 0;
-	}
-}
+/* .middle-position {*/
+/* 	white-space:nowrap;*/
+/* 	min-height:190px;*/
+/* 	&:after {*/
+/* 		content:'';*/
+/* 		display:inline-block;*/
+/* 		height:100%;*/
+/* 		width:1px;*/
+/* 		overflow:hidden;*/
+/* 		margin:0;*/
+/* 		vertical-align:middle;*/
+/* 	}*/
+/* 	>*{*/
+/* 		vertical-align:middle;*/
+/* 		display:inline-block;*/
+/* 		white-space:normal;*/
+/* 	}*/
+/* 	@media only screen and (max-width: $screen-xs-max) {*/
+/* 		height: auto !important;*/
+/* 		min-height: 10px;*/
+/* 		padding: 9px 0;*/
+/* 	}*/
+/* }*/
 
 .bottom-position {
 	position: relative;
