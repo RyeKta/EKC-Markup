@@ -1,0 +1,529 @@
+/* ==========================================================================
+   Header
+   ========================================================================== */
+#header{
+	background: $white;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 0;
+	.welcome-text{
+		margin: 0 15.2% 16px 0;
+		font-size: 14px;
+		strong{
+			font-weight: normal;
+		}
+	}
+	@media only screen and (max-width: $screen-md-max) {
+		padding: 0;
+		.welcome-text{
+			margin: 0 7% 18px 0;
+		}
+	}
+	@media only screen and (max-width: $screen-xs-max){
+		position: fixed;
+		z-index: 99;
+	}
+}
+
+/* Logo */
+.logo{
+	width:292px;
+	margin: 0;
+	position: relative;
+	z-index: 1;
+	height: auto;
+	padding: 4px 0;
+	img{
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+	@media only screen and (max-width: $screen-md-max) {
+		margin: 0 0 0 4px;
+	}
+	@media only screen and (max-width: $screen-xs-max){
+		width: 195px;
+		margin: 10px 0 0 15px;
+	}
+}
+
+/*
+ * Navigation bar 
+ */
+
+.navbar{
+	border-radius: 0;
+	font-size: 18px;
+	letter-spacing: -1px;
+	@media only screen and (max-width: $screen-xs){
+		padding: 0;
+	}
+	i{
+		font-size: 21px;
+		display:inline-block;
+		vertical-align:top;
+	}
+	@media only screen and (max-width: $screen-md-max) {
+		border:0;
+		i{
+			font-size: 30px;
+		}
+	}
+	.container-fluid{
+		&> .navbar-collapse{
+			margin-right: 0;
+			margin-left: 0;
+		}
+	}
+	> .container-fluid{
+		.navbar-brand{
+			@media only screen and (min-width: $screen-sm-min){
+				margin-left: 0;
+			}
+		}
+	}
+}
+#main-nav{
+	padding: 0;
+	@media only screen and (min-width: $screen-sm-min){
+		.nav{
+			.dropdown--mega{
+				position: static;
+			}
+		}
+		.dropdown-menu{
+			left: 0;
+			right: 0;
+			border-width: 1px 0 0;
+			border-radius: 0;
+		}
+	}
+	> .nav{
+		padding: 18px 12px 27px;
+		@media only screen and (max-width: $screen-sm-max){
+			padding: 12px;
+		}
+		@media only screen and (max-width: $screen-xs-max){
+			padding: 0;
+		}
+	}
+}
+
+/* Sign-in and  tel link top bar */
+
+.navbar--top{
+	position: relative;
+	z-index: 1;
+	@media only screen and (max-width: $screen-sm-max){
+		top: 59px;
+	}
+	@media only screen and (max-width: $screen-xs-max){
+		top: 0;
+		.container-fluid{
+			padding: 0;
+		}
+	}
+}
+
+.nav--add-nav{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	position: relative;
+	text-align: right;
+	letter-spacing: -4px;
+	@media only screen and (max-width: $screen-xs-max){
+		display: table;
+		width: 100%;
+		background: $blue2;
+	}
+	li{
+		letter-spacing: 0;
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 12px;
+		font-weight: 700;
+		text-transform: uppercase;
+		a{
+			-webkit-transition: all 0.3s ease-in-out;
+			transition: all 0.3s ease-in-out;
+			color: $gray15;
+			&:hover{
+				text-decoration: underline;
+			}
+			@media only screen and (max-width: $screen-xs-max){
+				padding: 12px;
+				display: block;
+				color: $white;
+				&:hover{
+					background: $blue3;
+					text-decoration: none;
+				}
+			}
+		}
+		& + li {
+			margin-left: 29px;
+		}
+		@media only screen and (max-width: $screen-xs-max){
+			display: table-cell;
+			text-align: center;
+		}
+	}
+}
+
+.add-nav__icon{
+	margin-right: 12px;
+	font-size: 18px;
+}
+
+/*
+ * Wrapping navigation bar with .nav-wrap to apply the sticky menu on page scroll
+ * .sticky:used to fix the navigation on the top
+ * .offset: Used to pull navgation out
+ * .scrolling: Used to reposition navigation on the screen with fixed positioning
+ */
+.nav-wrap{
+	&.sticky{
+		position: fixed;
+		top: 0;
+		width: 100%;
+		visibility: hidden;
+		opacity: 0;
+		z-index: -11;
+		&.scrolling{
+			-webkit-transition: all 0.3s ease-in-out;
+			transition: all 0.3s ease-in-out;
+			visibility: visible;
+			opacity: 1;
+		}
+		.navbar--top{
+			display: none;
+		}
+		.dropdown-menu{
+			pointer-events: none;
+		}
+		.dropdown.open{
+			.dropdown-menu{
+				pointer-events: initial;
+			}
+		}
+	}
+	&.offset{
+		-webkit-transform : translate3d(0, -100%, 0);
+			transform : translate3d(0, -100%, 0);
+		-webkit-transition: all 0.3s ease-in-out;
+			transition: all 0.3s ease-in-out;
+		z-index: 1040;
+	}
+	&.scrolling{
+		-webkit-transform: translate3d(0, 0 ,0);
+		        transform: translateed(0, 0, 0);
+	}
+	.caret{
+		margin-left: 8px;
+	}
+}
+
+.navbar-toggle{
+	border-radius: 0;
+	border-width: 2px;
+	padding: 9px 8px;
+	.icon-bar{
+		height: 2px;
+		width: 26px;
+
+		&+.icon-bar{
+			margin-top: 4px;
+		}
+	}
+	@media only screen and (max-width: $screen-md-max) {
+		margin: 22px 14px;
+	}
+}
+
+.navbar-collapse{
+	@media only screen and (max-width: $screen-xs-max) {
+		position:absolute;
+		top:100%;
+		left:0;
+		right: 0;
+		background: $white;
+		z-index: 100;
+	}
+	@media only screen and (min-width: $screen-xs-max){
+		width: auto;
+		border-top: 0;
+		-webkit-box-shadow: none;
+		        box-shadow: none;
+	}
+	&.collapse{
+		@media only screen and (min-width: $screen-sm-min){
+			display: block !important;
+			visibility: visible !important;
+			height: auto !important;
+			padding-bottom: 0;
+			overflow: visible !important;
+		}
+	}
+}
+
+.navbar-nav{
+	@media only screen and (max-width: $screen-sm-max) {
+		padding: 4px 0 0;
+		margin: 0;
+	}
+	@media only screen and (max-width: $screen-xs-max){
+		li{
+			&+li{
+				-webkit-box-shadow: 0 -1px 0 0 $gray3;
+				        box-shadow: 0 -1px 0 0 $gray3;
+			}
+		}
+	}
+	@media only screen and (min-width: $screen-sm-min){
+		width: 100%;
+		float: left;
+		margin: 0;
+	}
+	@media only screen and (min-width: $screen-md-min){
+		width: auto;
+	}
+	> li{
+		@media only screen and (min-width: $screen-sm-min){
+			float: left;
+		}
+	}
+	.open{
+		.dropdown-menu{
+			@media only screen and (max-width: $screen-xs-max){
+				border-top: 1px solid $gray6;
+				.dropdown-header{
+					padding: 12px 29px;
+				}
+			}
+		}
+	}
+}
+
+.dropdown-menu{
+	@media only screen and (min-width: $screen-sm-min){
+		border-top-color: $gray6;
+		font-size: 16px;
+		-webkit-transform: translateY(40px);
+		transform: translateY(40px);
+		-webkit-transition: all 0.3s ease-in-out;
+		transition: all 0.3s ease-in-out;
+		opacity: 0;
+		display: block;
+		visibility: hidden; /* make the menu's visibility hidden so it does not interfare on normal flow */
+		-webkit-box-shadow: 0px 12px 18px 0px transparentize($black,0.64);
+		box-shadow: 0px 12px 18px 0px transparentize($black,0.64);
+		z-index: -100;
+		& > li{
+			> a{
+				padding-top: 8px;
+				padding-bottom: 8px;
+			}
+		}
+		.open > &{
+			-webkit-transform: translateY(0);
+			transform: translateY(0);
+			opacity: 1;
+			visibility: visible;
+			z-index: 100;
+		}
+	}
+	@media only screen and (min-width: $screen-sm-min){
+		top: 70px;
+		&.menu--mega-menu{
+			top: 100%;
+		}
+	}
+	@media only screen and (min-width: $screen-md-min){
+		top: 85px;
+	}
+	li{
+		a{
+			color: $gray15;
+		}
+	}
+	
+	.col-xs-6{
+		@media only screen and (max-width: $screen-xs-max){
+			float: none;
+			width: 100%;
+		}
+	}
+}
+
+.dropdown-header{
+	text-transform: uppercase;
+	font-weight: 600;
+	letter-spacing: 1px;
+	color: $black;
+	padding: 6px 0 5px;
+	border-bottom: 1px solid $gray-light;
+	
+}
+
+/*
+ * Secondary level menu on the dropdown 
+ * nav--secondary-menu is used as a class for secondary level navigation
+ */
+
+.nav--sub-nav{
+	padding-bottom: 27px;
+	@media only screen and (max-width: $screen-sm-max){
+		font-size: 16px;
+	}
+	@media only screen and (max-width: $screen-xs-max){
+		padding: 0 29px;
+	}
+	li{
+		a{
+			padding: 6px 0;
+			display: block;
+			&:hover{
+				color: $black;
+				text-decoration: underline;
+			}
+		}
+		& + li{
+			@media only screen and (max-width: $screen-sm-max){
+				-webkit-box-shadow: none;
+				        box-shadow: none;
+			}
+		}
+	}
+}
+
+/* Simple dropdown menu */
+.menu--single-menu{
+	padding: 12px;
+	.nav--sub-nav{
+		padding-bottom: 0;
+	}
+}
+
+/* Mega menu */
+.menu--mega-menu{
+	.panel-group{
+		margin-bottom: 0;
+	}
+	.panel-collapse{
+		@media only screen and (min-width: $screen-sm-min){
+			display: block;
+			visibility: visible;
+			height: auto !important;
+		}
+	}
+	.container-fluid{
+		@media only screen and (max-width: $screen-xs-max){
+			padding: 0;
+			overflow-x: hidden;
+		}
+	}
+	@media only screen and (max-width: $screen-xs-max){
+		padding: 0;
+		.dropdown-header{
+			background: $gray-lighter;
+			position: relative;
+			font-size: 12px;
+			line-height: 18px;
+			border-bottom: 1px solid $gray6;
+			&:hover{
+				background: $gray-lighter !important;
+				color: $black;
+			}
+			&:focus{
+				color: $black;
+			}
+			&:after{
+				content: "\f106";
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 42px;
+				height: 42px;
+				border-left: 1px solid $gray4;
+				text-align: center;
+				background: $white;
+				display: inline-block;
+				font-size: 18px;
+				line-height: 42px;
+				font-weight: 500;
+				font-family:FontAwesome;
+				text-rendering: auto;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				-webkit-transition: all 0.3s ease-in-out;
+				transition: all 0.3s ease-in-out;
+			}
+			&.collapsed{
+				background: $gray-light;
+				&:after{
+					content: "\f107";
+				}
+			}
+		}
+	}
+	@media only screen and (min-width: $screen-sm-max){
+		padding: 18px 0 0;
+	}
+	.panel-group{
+		.panel{
+			& + .panel{
+				margin-top: 0;
+			}
+		}
+	}
+}
+
+/* Accordian inside mega menu */
+.menu--accordion{
+	.panel{
+		border: none;
+		background: none;
+		-webkit-box-shadow: none;
+		        box-shadow: none;
+		margin: 0;
+		border-radius: 0;
+	}
+	.panel-heading{
+		padding: 0;
+		border: 0;
+		background: none;
+		border-radius: 0;
+	}
+	.dropdown-header{
+		@media only screen and (min-width: $screen-sm-min){
+			pointer-events: none;
+		}
+	}
+}
+
+
+/*Add class on burger menu click */
+
+html{
+	@at-root .mobile-nav-active body,
+	&.mobile-nav-active{
+		overflow: hidden;
+		position: relative;
+		height: auto;
+	}
+}
+
+.mobile-nav-active{
+	.nav-wrap{
+		background-color: $white;
+		top: 0;
+		left: 0;
+		height: 100%;
+		overflow-x: hidden;
+		overflow-y: auto;
+		position: fixed;
+		width: 100%;
+	}
+}
