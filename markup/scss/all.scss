@@ -25,6 +25,7 @@ $mq-breakpoints: (
 
 @import "pages/breeds";
 @import "pages/services";
+@import "pages/resources";
 
 @font-face {
   font-family: 'icomoon';
@@ -2013,6 +2014,7 @@ header{
       padding: 5px;
       text-align: center;
       border-width: 2px;
+      line-height: 22px;
     }
     &:first-child,
     &:last-child{

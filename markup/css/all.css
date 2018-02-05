@@ -4,7 +4,7 @@
 /* Lighter */
 /* darker */
 /*$grid-float-breakpoint:1024px;*/
-.sample-block .status:after, header:after, .cycle-gallery .mask:after, .work-container dl:after {
+.block--resource .panel-title:after, .sample-block .status:after, header:after, .cycle-gallery .mask:after, .work-container dl:after {
   content: " ";
   display: block;
   clear: both; }
@@ -152,7 +152,7 @@
 
 /* Logo */
 .logo {
-  width: 292px;
+  width: 131px;
   margin: 0;
   position: relative;
   z-index: 1;
@@ -162,13 +162,10 @@
     display: block;
     width: 100%;
     height: auto; }
-  @media only screen and (max-width: 1023px) {
-    .logo {
-      margin: 0 0 0 4px; } }
   @media only screen and (max-width: 767px) {
     .logo {
-      width: 195px;
-      margin: 10px 0 0 15px; } }
+      width: 88px;
+      margin: 0px 0 0 15px; } }
 
 /*
  * Navigation bar 
@@ -207,7 +204,7 @@
       border-width: 1px 0 0;
       border-radius: 0; } }
   #main-nav > .nav {
-    padding: 18px 12px 27px; }
+    padding: 39px 12px 18px; }
     @media only screen and (max-width: 991px) {
       #main-nav > .nav {
         padding: 12px; } }
@@ -418,7 +415,7 @@
 
 @media only screen and (min-width: 992px) {
   .dropdown-menu {
-    top: 85px; } }
+    top: 80px; } }
 
 .dropdown-menu li a {
   color: #999; }
@@ -719,6 +716,108 @@
       font-size: 27px;
       line-height: 37px;
       padding: 27px; } }
+
+.block--resource .title a {
+  display: block;
+  color: inherit; }
+  @media only screen and (min-width: 768px) {
+    .block--resource .title a {
+      cursor-events: none; } }
+  @media only screen and (max-width: 767px) {
+    .block--resource .title a {
+      position: relative; }
+      .block--resource .title a:after {
+        content: "\f068";
+        font-family: FontAwesome;
+        position: absolute;
+        font-size: 18px;
+        line-height: 1;
+        color: #298fb6;
+        right: 0;
+        top: 3px; }
+      .block--resource .title a.collapsed:after {
+        content: "\f067"; } }
+
+.block--resource .list li.resource__category {
+  margin-bottom: 0; }
+
+.block--resource .panel-title {
+  position: relative; }
+
+.block--resource .resource__category-title {
+  display: inline-block;
+  float: left;
+  font-size: 15px;
+  font-weight: 600;
+  color: #464646;
+  position: relative;
+  z-index: 2; }
+
+@media only screen and (min-width: 768px) {
+  .resource.collapse {
+    display: block; } }
+
+.resource__category {
+  border: none;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none; }
+  .resource__category .panel-title span {
+    position: relative;
+    text-align: right;
+    display: block;
+    min-height: 19px; }
+    .resource__category .panel-title span:after {
+      content: "\f068";
+      font-family: FontAwesome;
+      position: absolute;
+      font-size: 18px;
+      line-height: 1;
+      color: #298fb6;
+      right: 0;
+      top: 3px; }
+    .resource__category .panel-title span.collapsed:after {
+      content: "\f067"; }
+  .resource__category .panel-body {
+    background: #fff;
+    padding: 0 0 0 15px; }
+    .resource__category .panel-body .list li {
+      border-bottom: 1px solid #eee;
+      position: relative;
+      padding: 8px 30px 8px 0;
+      margin-bottom: 0;
+      font-weight: 400; }
+      .resource__category .panel-body .list li:last-child {
+        border-bottom: none; }
+      .resource__category .panel-body .list li:after {
+        font-family: FontAwesome;
+        content: "\f054";
+        position: absolute;
+        right: 15px;
+        top: 12px;
+        font-size: 18px;
+        line-height: 1; }
+
+.resource__opener {
+  position: relative;
+  top: -3px;
+  font-size: 18px;
+  line-height: 1; }
+  .resource__opener:before {
+    color: #298fb6; }
+
+/* Resources articles */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .resources__articles .post-card {
+    overflow: hidden;
+    height: auto !important; }
+    .resources__articles .post-card .post-thumb-img {
+      float: left;
+      width: 33.33%; }
+    .resources__articles .post-card .post-title {
+      font-size: 14px; }
+    .resources__articles .post-card .post-card-content {
+      overflow: hidden; } }
 
 @font-face {
   font-family: 'icomoon';
@@ -2351,7 +2450,8 @@ header h6 {
       height: 36px;
       padding: 5px;
       text-align: center;
-      border-width: 2px; }
+      border-width: 2px;
+      line-height: 22px; }
     .pagination li:first-child a, .pagination li:last-child a {
       font-size: 14px;
       padding-top: 6px;
