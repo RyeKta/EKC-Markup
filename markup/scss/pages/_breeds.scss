@@ -1,46 +1,233 @@
  /*
-  * Stylesheet for Dog Enquiry Page.
+  * Stylesheet for Breed list page
   * 
  */
+
+.section-heading{
+	.sub-heading{
+		display: block;
+		margin-bottom: 27px;
+	}
+	.bottom-text{
+		font-weight: 500;
+		display: block;
+	}
+}
  .breed-section{
 	padding: 59px 0;
  }
+ .block--breed{
+ 	padding-top: 40px;
+ 	padding-bottom: 27px;
+ 	@media only screen and (max-width: 639px){
+ 		.col-xs-6{
+ 			width: 100%;
+ 			float: none;
+ 		}
+ 	}
+ 	#content{
+ 		margin-bottom: 40px;
+ 		@media only screen and (max-width: $screen-xs-max){
+ 			margin-bottom: 27px;
+ 		}
+ 		@media only screen and (min-width: $screen-xs-min) and (max-width: 639px){
+ 			margin-bottom: 0;
+ 		}
+ 	}
+ }
+
+/* ==========================================================================
+   Dog Breed Search Form
+   ========================================================================== */
+
+   .breed__search-form{
+   	margin-bottom: 18px;
+   	@media only screen and (max-width: $screen-xs-max){
+   		max-width: 290px;
+   		margin-left: auto;
+   		margin-right: auto;
+   	}
+   	.breed__search-btn{
+   		margin: 0;
+   		vertical-align: top;
+   		width: 25%;
+   		height: 40px;
+   		@media only screen and (max-width: $screen-xs-max){
+   			width: 100%;
+   		}
+   	}
+   }
+
+/* Breed search input field */
+
+.breed__search-input{
+	outline: none;
+	border: 0;
+	height: 40px;
+	padding: 12px 18px;
+	color: $gray-dark;
+	width: 50%;
+	@media only screen and (max-width: $screen-xs-max){
+		width: 100%;
+		margin-bottom: 8px;
+	}
+}
+
+/* Phone no label */
+
+.label--book-dog{
+	background: transparentize($blue2, 0.7);
+	font-weight: 300;
+	display: inline-block;
+	vertical-align: top;
+	padding: 8px 12px;
+	margin-bottom: 5px;
+}
+
+/* ==========================================================================
+   Breeds List 
+   ========================================================================== */
+
+/* Breed Card
+   ========================================================================== */
  .breed{
- 	border: 1px solid $gray-light;
- 	background: $white;
- 	padding: 14px;
- 	margin-bottom: 27px;
+ 	border: 1px solid $gray3;
+ 	margin-bottom: 40px;
  	position: relative;
+ 	@media only screen and (min-width:$screen-xs-min) and (max-width: 639px){
+ 		text-align: left;
+ 		overflow: hidden;
+ 	}
  	.breed__image{
  		height: 262px;
  		overflow: hidden;
- 		margin-bottom: 14px;
  		img{
  			height: 100%;
  			-o-object-fit: cover;
  			   object-fit: cover;
  			-webkit-transform: scale(1);
  			        transform: scale(1);
- 			-webkit-transition: all 0.33s ease-in-out;
- 					transition: all 0.33s ease-in-out;
+ 			transition: all 0.33s ease-in-out;
  			   &:hover{
  			   	-webkit-transform: scale(1.2);
  			   	        transform: scale(1.2);
  			   }
  		}
+ 		@media only screen and (min-width:$screen-xs-min) and (max-width: 639px){
+ 			float: left;
+ 			width: 33.33%;
+ 			height: auto;
+ 		}
  	}
  	.breed__detail{
  		padding: 22px 0;
- 		h2{
- 			text-transform: uppercase;
- 			letter-spacing: 1px;
- 			margin: 0;
- 			color: $black;
- 			font-weight: 600;
-			overflow: hidden;
- 		}
  	}
  }
+
+ /* Breed Heading 
+    ========================================================================== */
+ .breed__heading{
+ 	background: $white;
+ 	padding: 15px;
+ 	@media only screen and (min-width:$screen-xs-min) and (max-width: 639px){
+ 		padding: 12px;
+ 	}
+ }
+
+ /* Breed Name  */
+
+ .breed__name{
+ 	text-transform: uppercase;
+ 	letter-spacing: 1px;
+ 	margin: 0;
+ 	color: $black;
+ 	font-weight: 600;
+ 	overflow: hidden;
+ 	@media only screen and (max-width: $screen-xs-max){
+		font-size: 16px;
+	}
+ }
+
+/* Breed Short Descrition
+   ========================================================================== */
+
+.breed__desc{
+	padding: 18px 15px 27px;
+	@media only screen and (max-width: $screen-xs-max){
+		font-size: 16px;
+	}
+	@media only screen and (min-width:$screen-xs-min) and (max-width: 639px){
+		overflow: hidden;
+	}
+}
+
+/* Button for more info about breed
+   ========================================================================== */
+
+.breed__btn-more{
+	position: absolute;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	        transform: translateX(-50%);
+	bottom: -27px;
+	@media only screen and (min-width:$screen-xs-min) and (max-width: 639px){
+		-webkit-transform: translateX(0);
+		        transform: translateX(0);
+		left: 37%;
+		bottom: 0;
+	}
+}
+
+
+
+
+
+/* ==========================================================================
+   Breed pagination
+   ========================================================================== */
+
+.pagination--breed{
+	border-top: 1px solid $gray3;
+	padding: 40px 0 27px;
+	@media only screen and (max-width: $screen-xs-max){
+		padding: 27px 0 0;
+	}
+}
+
+/* ==========================================================================
+   Breed Single Page
+   ========================================================================== */
+.block--breed-single{
+	padding-top: 59px;
+}
+
+/* Breed details List
+   ========================================================================== */
+.breed__detail{
+	ul{
+		li{
+			@extend %clearfix;
+			& + li{
+				padding-top: 8px;
+			}
+		}
+	}
+	strong{
+		float: left;
+		position: relative;
+		margin-right: 8px;
+		&:after{
+			content: ":";
+			padding-left: 5px;
+		}
+	}
+	.text{
+		display: block;
+		overflow: hidden;
+		font-size: 16px;
+		line-height: 27px;
+	}
+}
  .breed__enquiry{
  	position: absolute;
  	left: 50%;

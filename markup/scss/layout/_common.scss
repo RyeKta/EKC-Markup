@@ -142,3 +142,179 @@
 .bg--white{
 	background:  $white;
 }
+
+/* ==========================================================================
+   Custom Forms
+   ========================================================================== */
+
+/* Radio Module
+   ========================================================================== */
+   .label--radio{
+   	margin: 0 18px 8px 0;
+   	font-size: 14px;
+   	font-weight: 400;
+   	text-transform: uppercase;
+   	color: $white;
+   	.jcf-radio{
+   		background: $white;
+   		border: 2px solid $blue;
+   		border-radius: 50%;
+   		cursor: default;
+   		display: inline-block;
+   		margin: 0 8px 0 0;
+   		height: 27px;
+   		overflow: hidden;
+   		position: relative;
+   		vertical-align: middle;
+   		width: 27px;
+   		&.jcf-checked{
+   			background: $blue;
+   		}
+   		span{
+   			display:none;
+   			position:absolute;
+   			top:4px;
+   			left:4px;
+   			right:4px;
+   			bottom:4px;
+   			background:$white;
+   			border-radius:100%;
+   		}
+   		&.jcf-checked{
+   			span{
+   				display: block;
+   			}
+   		}
+   	}
+   }
+.jcf-radio input[type="radio"] {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border: 0;
+  margin: 0;
+  left: 0;
+  top: 0;
+}
+/* Select Module
+   ========================================================================== */
+   .jcf-select{
+   	border: 1px solid $blue2;
+   	color: $black;
+   	background: $white;
+   	display: block;
+   	height: 40px;
+   	overflow: hidden;
+   	position: relative;
+   	width: 100%;
+   	.jcf-select-text{
+   		display: block;
+   		margin: 0 40px 0 0;
+   		overflow: hidden;
+   		-ms-text-overflow: ellipsis;
+   		text-overflow: ellipsis;
+   		white-space: nowrap;
+   	}
+   	.jcf-select-opener{
+   		border-left: 8px solid transparent;
+   		border-right: 8px solid transparent;
+   		border-top: 14px solid $blue;
+		bottom: 0;
+		height: 0;
+		margin-top: -4px;
+		position: absolute;
+		right: 13px;
+		top: 50%;
+		width: 0;
+   	}
+   }
+   .jcf-select-form-control{
+   	font-size: 16px;
+   	line-height: 24px;
+   	padding: 8px 13px;
+   }
+   .jcf-select-drop{
+   	padding: 0;
+   	.jcf-select-drop-content{
+   		border-top: 1px solid $gray-light;
+   	}
+   	.jcf-hover{
+   		background: $blue2;
+   		color: $white;
+   	}
+   }
+   .jcf-list{
+   	display: block;
+   	background: $white;
+   	width: 100%;
+   	.jcf-list-content{
+   		display: inline-block;
+   		vertical-align: top;
+   		overflow: auto;
+   		width: 100%;
+   	}
+   	ul{
+   		list-style: none;
+   		margin: 0;
+   		padding: 0;
+   		li{
+   			overflow: hidden;
+   			display: block;
+   		}
+   	}
+   	.jcf-option{
+   		cursor: default;
+   		display: block;
+   		overflow: hidden;
+   		padding: 4px 13px;
+   		white-space: nowrap;
+   	}
+   }
+/* Checkbox module
+  ========================================================================== */
+  .jcf-checkbox {
+  	background: $white;
+  	border: 1px solid $gray-lighter;
+  	border-radius: 2px;
+  	cursor: default;
+  	display: inline-block;
+  	float: left;
+  	height: 18px;
+  	margin: 0 8px 0 0;
+  	overflow: hidden;
+  	position: relative;
+  	vertical-align: top;
+  	width: 18px;
+  	&.jcf-checked{
+  		&:before{
+  			content: '\f00c';
+  			display: block;
+  			font-family: FontAwesome;
+  			-webkit-font-feature-settings: normal;
+  			        font-feature-settings: normal;
+  			-webkit-font-kerning: auto;
+  			        font-kerning: auto;
+  			-webkit-font-language-override: normal;
+  			        font-language-override: normal;
+  			font-size: 16px;
+  			font-size-adjust: none;
+  			font-stretch: normal;
+  			font-style: normal;
+  			font-synthesis: weight style;
+  			font-variant: normal;
+  			font-weight: normal;
+  			line-height: 18px;
+  			text-rendering: auto;
+  			color: $gray-dark;
+  		}
+  	}
+  }
+  .jcf-checkbox input[type="checkbox"] {
+  	position: absolute;
+  	width: 100%;
+  	height: 100%;
+  	border: 0;
+  	margin: 0;
+  	left: 0;
+  	top: 0;
+  }

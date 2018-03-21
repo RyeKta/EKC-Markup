@@ -1,0 +1,550 @@
+.puppy-finder__hero{
+	padding: 40px 0;
+}
+.puppy-finder__top-section{
+	color: $white;
+	margin-bottom: 40px;
+	h1{
+		font-size: 40px;
+		margin: 0 0 18px;
+		@media only screen and (min-width: $screen-sm-min){
+			font-size: 60px;
+		}
+	}
+}
+.puppy-finder__form{
+	background: transparentize($black, 0.7);
+	padding: 27px;
+	h2{
+		color: $white;
+		display: inline-block;
+		line-height: 27px;
+		margin: 0 27px 27px 0;
+		vertical-align: top;
+	}
+ }
+ .puppy-finder__radio-holder{
+ 	display: inline-block;
+ 	vertical-align: middle;
+ }
+.puppy-finder__btn--search{
+	.btn{
+		margin-bottom: 0;
+		@media only screen and(max-width: $screen-xs-max){
+			width: 100%;
+		}
+	}
+}
+
+
+/* ==========================================================================
+   Featuerd puppies
+   ========================================================================== */
+.featured-puppies{
+	padding: 40px 0;
+	.breed{
+		.breed__image{
+			@media only screen and (min-width: $screen-xs-min) and (max-width: 639px){
+				height: 219px;
+			}
+		}
+	}
+}
+.breed--puppy{
+	padding: 27px 18px 40px;
+	color: $black;
+	p{
+		margin-bottom: 0;
+	}
+	@media only screen and (min-width: $screen-xs-min) and (max-width: 639px){
+		overflow: hidden;
+	}
+}
+.breed--puppy--is-available,
+.breed--puppy--is-unavailable{
+	margin-bottom: 18px;
+}
+.breed--puppy__breeder{
+	@media only screen and (min-width: $screen-xs-min) and (max-width: 639px){
+		margin-bottom: 27px;
+	}
+}
+.breed--puppy__breeder__name{
+	font-weight: 600;
+}
+
+
+
+/* ==========================================================================
+   Join Community
+   ========================================================================== */
+.block-join-community{
+	background: $white;
+	padding: 40px 0;
+}
+.community-icon{
+	display: block;
+	margin-bottom: 18px;
+	.fa-comments{
+		font-size: 40px;
+		color: $blue2;
+	}
+}
+
+
+
+
+/* ==========================================================================
+   puppy search page
+   ========================================================================== */
+.puppy-search-option__wrap{
+	box-shadow: 0 1px 3px transparentize($black, 0.9);
+	margin: 18px 0;
+	.puppy-finder__form{
+		background: $white;
+		padding-bottom: 8px;
+		padding-top: 23px;
+		@media only screen and (max-width: $screen-xs-max){
+			padding: 8px 12px;
+		}
+		h2{
+			color: $black;
+		}
+	}
+	.label--radio{
+		color: $blue;
+	}
+}
+
+.puppy-search-option{
+	padding-top: 27px;
+}
+
+.puppy-search-option__more-filters{
+	margin-bottom: 18px;
+}
+
+/* Additional Filter block
+   ========================================================================== */
+
+.puppy-search-option__filter{
+	@extend %clearfix;
+	background: $white;
+	box-shadow: 0 1px 3px transparentize($black, 0.9);
+	margin-bottom: 18px;
+	padding: 8px 0 12px;
+	position: relative;
+	.holder{
+		border-left: 1px solid $gray-light;
+		&:first-child{
+			border-left: none;
+		}
+		@media only screen and (max-width: $screen-xs-max){
+			border-left: 0;
+		}
+	}
+	@media only screen and (max-width: $screen-xs-max){
+		padding: 12px;
+	}
+	@media only screen and (min-width: $screen-sm-min){
+		&.collapse{
+			display: block;
+			height: auto !important;
+		}
+	}
+	.puppy-search-option__filter__holder{
+		float: left;
+		width: 20%;
+		padding-left: 30px;
+		@media only screen and (max-width: $screen-xs-max){
+			float: none;
+			width: auto;
+			padding: 0;
+		}
+	}
+	/* Dropdown opener */
+	.opener{
+		color: $gray-dark;
+		display: inline-block;
+		vertical-align: top;
+		padding: 12px 0;
+		&:after{
+			content: "";
+			border: 8px solid $black;
+			border-width: 8px 5px 0;
+			border-color: $black transparent transparent;
+			display: inline-block;
+			margin-left: 8px;
+			vertical-align: middle;
+			@media only screen and (max-width: $screen-xs-max){
+				display: none;
+			}
+		}
+		&:hover{
+			color: $black;
+		}
+		@media only screen and (max-width: $screen-xs-max){
+			font-size: 14px;
+			font-weight: 600;
+			padding: 0;
+			pointer-events: none;
+		}
+	}
+	.drop-wrap{
+		background: $white;
+		border-top: 1px solid $gray-light;
+		box-shadow: 0 1px 3px transparentize($black, 0.9);
+		left: 0;
+		right: 0;
+		padding: 18px 12px;
+		position: absolute;
+		@media only screen and (max-width: $screen-xs-max){
+			border-top: none;
+			box-shadow: none;
+			display: block !important;
+			padding: 0;
+			position: static !important;
+		}
+		.btn{
+			float: right;
+			font-size: 16px;
+			margin-bottom: 0;
+			@media only screen and (max-width: $screen-xs-max){
+				float: none;
+				display: none;
+			}
+		}
+	}
+	/* Dropdown checkbox list */
+	.check-list{
+		list-style: none;
+		margin: 0;
+		padding: 4px 0 0 0;
+		float: left;
+		overflow: hidden;
+		width: calc(100% - 131px);
+		li{
+			float: left;
+			width: 20%;
+			padding: 0 18px;
+			@media only screen and (max-width: $screen-xs-max){
+				min-height: 40px;
+				padding: 0;
+				width: 48%;
+			}
+			@media only screen and (max-width: $screen-sm-max){
+				width: 25%;
+			}
+		}
+		label{
+			color: $gray7;
+			font-size: 14px;
+			font-weight: normal;
+			line-height: 18px;
+		}
+		@media only screen and (max-width: $screen-xs-max){
+			float: none;
+			width: auto;
+		}
+	}
+	.check-list__txt{
+		@media only screen and (max-width: $screen-xs-max){
+			display: block;
+			overflow: hidden;
+		}
+	}
+	.clear{
+		color: $gray-dark;
+		display: inline-block;
+		vertical-align: top;
+		padding: 12px 0;
+	}
+	.close{
+		color: $gray-dark;
+		font-size: 14px;
+		line-height: 18px;
+		opacity: 1;
+	}
+}
+
+.puppy-search-option__filter--mobile{
+	display: none;
+	@media only screen and (max-width: $screen-xs-max){
+		display: block;
+		overflow: hidden;
+		.btn{
+			height: auto;
+			margin-bottom: 12px;
+			width: 100%;
+		}
+	}
+}
+
+/* Search result
+   ========================================================================== */
+
+.puppy-search-result__text{
+	font-weight: 600;
+	margin: 0 0 18px;
+	@media only screen and (max-width: $screen-xs-max){
+		font-size: 14px;
+	}
+}
+.puppy-search-result{
+	.breed{
+		.breed__image{
+			@media only screen and (min-width: $screen-xs) and (max-width:639px){
+				margin-top: 34px;
+				height: 109px;
+			}
+		}
+	}
+	.pagination-block{
+		border-top: 1px solid $gray3;
+		margin-top: 18px;
+		padding: 18px 0 18px;
+	}
+}
+
+/* ==========================================================================
+   Puppy dog detail
+   ========================================================================== */
+.btn--back{
+	display: inline-block;
+	font-size: 14px;
+	margin: 4px 0 12px;
+	vertical-align: middle;
+	span{
+		border: 2px solid $gray-darker;
+		border-radius: 50%;
+		display: inline-block;
+		height: 39px;
+		line-height: 35px;
+		margin-right: 12px;
+		text-align: center;
+		vertical-align: middle;
+		width: 39px;
+		&:before{
+			color: $black;
+		}
+	}
+}
+
+/* Puppy images collection
+   ========================================================================== */
+   .puppy-detail__image-list{
+   	margin: 12px 0;
+	display: table;
+	width: 100%;
+	li{
+		display: table-cell;
+		a{
+			display: block;
+			background: $white;
+			&:hover{
+				opacity: 0.8;
+			}
+		}
+		& + li{
+			padding-left: 12px;
+		}
+	}
+   }
+/* ==========================================================================
+   puppy information
+   ========================================================================== */
+   .puppy-detail-info{
+   	background: $white;
+   	padding: 18px;
+   }
+   .puppy-detail-info__holder{
+   	padding-bottom: 10px;
+   }
+  .puppy-detail-info__title{
+  	color: $blue2;
+  	font-size: 27px;
+  	font-weight: 600;
+  	margin: 0 0 18px;
+  }
+  .puppy-detail-info__field{
+   @extend %clearfix;
+   & + .puppy-detail-info__field{
+   	padding-top: 8px;
+   }
+  }
+  .puppy-detail-info__label{
+  	float: left;
+  	margin-right: 8px;
+  	position: relative;
+  }
+  .puppy-detail-info__text{
+  	display: block;
+  	font-size: 16px;
+  	line-height: 27px;
+  	margin-bottom: 0;
+  	overflow: hidden;
+  	@media only screen and(max-width: 639px){
+  		overflow: visible;
+  	}
+  }
+  .puppy-detail-info__seller{
+  	border-top: 1px solid $gray3;
+  	overflow: hidden;
+  	padding: 17px 0 9px;
+  	dl{
+  		color: $black;
+  		font-size: 16px;
+  		line-height: 27px;
+  		margin-bottom: 0;
+  		padding-top: 8px;
+  		dt{
+  			float: left;
+  			font-weight: 400;
+  			margin-right: 8px;
+  			line-height: 27px;
+  		}
+  		dd{
+  			font-size: 18px;
+  			display: block;
+  			overflow: hidden;
+  		}
+  	}
+  	.puppy-detail-info__btn{
+  		&.lightbox{
+  			width: auto;
+  		}
+  	}
+  }
+  /* Breeder detail information: about, info, any contact links
+     ========================================================================== */
+  .breeder-profile{
+  	padding: 18px 0 40px;
+  	dl{
+  		color: $black;
+  		font-size: 16px;
+  		line-height: 27px;
+  		margin-bottom: 0;
+  		overflow: hidden;
+  		dt{
+  			float: left;
+  			margin-right: 8px;
+  			line-height: 27px;
+  		}
+  		dd{
+  			font-size: 18px;
+  			display: block;
+  			overflow: hidden;
+  		}
+  	}
+  }
+  .breeder-profile__content{
+  	margin-bottom: 27px;
+  }
+  .breeder-profile__title{
+  	color: $black;
+  	font-size: 40px;
+  	font-weight: 600;
+  	margin: 0  0 20px;
+  	@media only screen and (max-width: $screen-xs-max){
+  		font-size: 27px;
+  	}
+  }
+  .breeder-profile__section{
+  	& + &{
+  		margin-top: 27px;
+  	}
+  }
+  /*Sidebar 
+     ========================================================================== */
+     .breeder-profile__title--sidebar{
+     	border-bottom: 1px solid $gray3;
+     	font-size: 18px;
+     	font-weight: 400;
+     	line-height: 56px;
+     	margin-bottom: 18px;
+     	text-transform: uppercase;
+     }
+     .related-block__card{
+     	background: $white;
+     	box-shadow: 0 1px 3px transparentize($black, 0.9);
+     	margin-bottom: 18px;
+     	overflow: hidden;
+     	padding: 12px;
+     }
+     .related-block__card__title{
+     	color: $blue;
+     	font-size: 18px;
+     	font-weight: 600;
+     }
+     .related-block__card__image{
+     	@media only screen and (min-width: 640px) and (max-width:$screen-sm-max){
+     		float: left;
+     		margin-right: 18px;
+     		width: 27%;
+     	}
+     }
+     .related-block__card__content{
+     	span{
+     		float: left;
+     		&:nth-child(2){
+     			font-size: 16px;
+     			float: right;
+     			line-height: 40px;
+     		}
+     	}
+     }
+     .related-block__card__content__field{
+     	margin-bottom: 12px;
+     	overflow: hidden;
+     	a{
+     		text-decoration: underline;
+     	}
+     }
+     .related-block__card__content__text{
+     	color: $black;
+     	font-size: 27px;
+     	font-weight: 600;
+     	margin-right: 8px;
+     }
+     /* Breeder contact form
+        ========================================================================== */
+        .breeder-contact-form{
+        	input,
+        	textarea{
+        		border: 3px solid $gray-light;
+        		padding: 18px;
+        	}
+        	input{
+        		height: 59px;
+        	}
+        	textarea{
+        		height: 160px;
+        		resize: none;
+        	}
+        	.btn{
+        		line-height: 18px;
+        		text-transform: capitalize;
+        	}
+        }
+        .breeder-contact-form__title{
+        	color: $black;
+        	font-size: 40px;
+        	font-weight: 600;
+        	margin-bottom: 18px;
+        	@media only screen and (max-width: $screen-xs-max){
+        		font-size: 27px;
+        	}
+        }
+        .related-block__card__content__field{
+        	.lightbox{
+        		width: auto;
+        	}
+        }
+/* ==========================================================================
+   Lightbox
+   ========================================================================== */
+ .lightbox{
+ 	@media only screen and (min-width: $screen-sm-min){
+ 		width: 640px;
+ 	}
+ }
